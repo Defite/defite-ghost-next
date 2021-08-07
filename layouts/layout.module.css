@@ -1,0 +1,5 @@
+.layout {
+    @apply container;
+    @apply mx-auto;
+    @apply px-16;
+}

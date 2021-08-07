@@ -1,0 +1,10 @@
+.header {
+    @apply px-4rem;
+    @apply py-1.5rem;
+    
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}

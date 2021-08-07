@@ -1,0 +1,6 @@
+.sectionTitle {
+    @apply text-4xl;
+    @apply font-serif;
+
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,17 @@
+.intro {
+    @apply px-3rem;
+    @apply py-8rem;
+}
+
+.introTitle {
+    @apply text-5.2rem;
+    @apply font-serif;
+    @apply font-bold;
+
+    line-height: 1.1;
+    margin-bottom: 2.75rem;
+}
+
+.introSub {
+    @apply text-2xl;
+}

@@ -1,0 +1,16 @@
+.socialFooter {
+    position: fixed;
+    bottom: 0;
+    left: 60px;
+}
+
+.socialFooter::before {
+    @apply bg-blue-600;
+
+    content: "";
+    height: 4em;
+    width: 3px;
+    position: absolute;
+    bottom: 0;
+    transform: translateX(9px);
+}
