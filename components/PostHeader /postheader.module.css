@@ -1,0 +1,27 @@
+.postHeader {
+    @apply mb-15;
+    @apply py-20;
+    @apply bg-gray-200;
+}
+
+.postHeaderInner {
+    @apply mx-auto;
+}
+
+.postHeaderTitle {
+    @apply font-serif;
+    @apply text-6xl; 
+    @apply text-center; 
+    @apply leading-snug;
+    @apply container;
+    @apply mx-auto;
+}
+
+.postHeaderDescription {
+    @apply text-xl;
+    @apply text-gray-600;
+    @apply mx-auto;
+
+    text-align: center;
+    max-width: 65ch;
+}

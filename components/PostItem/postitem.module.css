@@ -1,5 +1,4 @@
 .postItem {
-    /* @apply shadow-lg; */
     @apply mb-5;
     @apply p-5;
     @apply transition;
@@ -27,6 +26,8 @@
 
 .description {
     @apply text-gray-500;
+
+    max-width: 90%;
 }
 
 .link {

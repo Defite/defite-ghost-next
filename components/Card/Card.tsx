@@ -7,9 +7,10 @@ interface ICardProps {
     url: string;
     description: string;
     cover?: any; // Because fuck you, StaticImport, that's why
+    className?: string;
 }
 
-const Card: React.FunctionComponent<ICardProps> = ({ title, url, description, cover }) => {
+const Card: React.FunctionComponent<ICardProps> = ({ className, title, url, description, cover }) => {
     const renderCover = () => {
         if (!cover) {
             return null;
@@ -19,15 +20,17 @@ const Card: React.FunctionComponent<ICardProps> = ({ title, url, description, co
     }
 
     return (
-        <div className={styles.card}>
-            {renderCover()}
-            <div className={styles.cardContent}>
-                {/* <div className={styles.cardContentInner}> */}
-                    <h2 className={styles.cardTitle}>{title}</h2>
-                    <p className={styles.cardDescription}>{description}</p>
-                {/* </div> */}
+        <div className={className}>
+            <div className={styles.card}>
+                {renderCover()}
+                <div className={styles.cardContent}>
+                    {/* <div className={styles.cardContentInner}> */}
+                        <h2 className={styles.cardTitle}>{title}</h2>
+                        <p className={styles.cardDescription}>{description}</p>
+                    {/* </div> */}
+                </div>
+                <Link href={url}><a className={styles.cardLink}></a></Link>
             </div>
-            <Link href={url}><a className={styles.cardLink}></a></Link>
         </div>
     )
 }

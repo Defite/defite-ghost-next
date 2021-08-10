@@ -12,7 +12,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <main className={styles.layout}>
+            <main>
                 {children}
             </main>
             <SocialFooter />

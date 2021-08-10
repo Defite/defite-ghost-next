@@ -1,0 +1,12 @@
+.projects {
+    @apply -mx-1rem;
+
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.projectCard {
+    @apply px-1rem;
+
+    width: 50%;
+}
