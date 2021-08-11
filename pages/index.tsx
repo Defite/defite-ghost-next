@@ -1,44 +1,33 @@
 import Intro from '../components/Intro/Intro';
 import PostList from '../components/PostList/PostList';
 import styles from './index.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedPostsData } from '../lib/utils';
 import Projects from '../components/Projects/Projects';
 
-const mockProjects = [
-  {
-    title: 'Webgrower',
-    description: 'Almost everyday magazine about web development',
-    cover: '/projects/webgrower.png',
-    url: 'https://webgrower.ru'
-  },
-  {
-    title: 'My awesome project',
-    description: 'Project about something meaningful in my life',
-    url: '#'
-  },
-]
-
-export default function Home({allPostsData}: any) {
+export default function Home({posts, projects}: any) {
   return (
     <div className="container mx-auto px-16">
       <Intro />
       <section>
         <h2 className={styles.sectionTitle}>Posts</h2>
-        <PostList items={allPostsData} />
+        <PostList items={posts} />
       </section>
       <section>
         <h2 className={styles.sectionTitle}>Projects</h2>
-        <Projects projects={mockProjects} />
+        <Projects projects={projects} />
       </section>
     </div>
   )
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData().slice(0, 10);
+  const posts = getSortedPostsData('posts').slice(0, 10);
+  const projects = getSortedPostsData('projects');
+
   return {
       props: {
-          allPostsData
+          posts,
+          projects
       }
   }
 }

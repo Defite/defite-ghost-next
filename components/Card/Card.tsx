@@ -4,13 +4,13 @@ import styles from './card.module.css'
 
 interface ICardProps {
     title: string;
-    url: string;
+    href: string;
     description: string;
     cover?: any; // Because fuck you, StaticImport, that's why
     className?: string;
 }
 
-const Card: React.FunctionComponent<ICardProps> = ({ className, title, url, description, cover }) => {
+const Card: React.FunctionComponent<ICardProps> = ({ className, title, href, description, cover }) => {
     const renderCover = () => {
         if (!cover) {
             return null;
@@ -29,7 +29,7 @@ const Card: React.FunctionComponent<ICardProps> = ({ className, title, url, desc
                         <p className={styles.cardDescription}>{description}</p>
                     {/* </div> */}
                 </div>
-                <Link href={url}><a className={styles.cardLink}></a></Link>
+                <Link href={href}><a className={styles.cardLink}></a></Link>
             </div>
         </div>
     )

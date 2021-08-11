@@ -15,18 +15,3 @@ module.exports = withMDX({
     return config;
   },
 })
-
-// module.exports = withPlugins(
-//   [
-//     // [
-//       // withImage,
-//       // {
-//       //   // specify the default breakpoints
-//       //   breakpoints: [425, 768, 1024, 1440],
-//       //   persistentCache: false,
-//       // },
-//     // ],
-//     withMDX,
-//   ],
-//   nextConfig
-// );
