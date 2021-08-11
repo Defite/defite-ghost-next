@@ -1,9 +1,9 @@
 interface ITest {
-    text: string;
+  text: string
 }
 
 const Test: React.FunctionComponent<ITest> = ({ text }) => {
-    return <div>{text}</div>
+  return <div>{text}</div>
 }
 
-export default Test;
+export default Test

@@ -1,17 +1,16 @@
 import MDX from '@mdx-js/runtime'
-import Test from '../components/Test/Test';
+import Test from '../components/Test/Test'
 
 const PostLayout: React.FunctionComponent<any> = ({ content, className }) => {
+  const components = {
+    Test,
+  }
 
-    const components = {
-        Test
-    }
-
-    return (
-        <article className={className}>
-            <MDX components={components}>{content}</MDX>
-        </article>
-    )
+  return (
+    <article className={className}>
+      <MDX components={components}>{content}</MDX>
+    </article>
+  )
 }
 
-export default PostLayout;
+export default PostLayout

@@ -1,10 +1,10 @@
-import Intro from '../components/Intro/Intro';
-import PostList from '../components/PostList/PostList';
-import styles from './index.module.css';
-import { getSortedPostsData } from '../lib/utils';
-import Projects from '../components/Projects/Projects';
+import Intro from '../components/Intro/Intro'
+import PostList from '../components/PostList/PostList'
+import styles from './index.module.css'
+import { getSortedPostsData } from '../lib/utils'
+import Projects from '../components/Projects/Projects'
 
-export default function Home({posts, projects}: any) {
+export default function Home({ posts, projects }: any) {
   return (
     <div className="container mx-auto px-16">
       <Intro />
@@ -21,14 +21,13 @@ export default function Home({posts, projects}: any) {
 }
 
 export async function getStaticProps() {
-  const posts = getSortedPostsData('posts').slice(0, 10);
-  const projects = getSortedPostsData('projects');
+  const posts = getSortedPostsData('posts').slice(0, 10)
+  const projects = getSortedPostsData('projects')
 
   return {
-      props: {
-          posts,
-          projects
-      }
+    props: {
+      posts,
+      projects,
+    },
   }
 }
-

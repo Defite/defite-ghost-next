@@ -5,7 +5,9 @@ import Layout from '../layouts/layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout><Component {...pageProps} /></Layout>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
 export default MyApp
