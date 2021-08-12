@@ -1,6 +1,15 @@
-.sectionTitle {
-    @apply text-4xl;
-    @apply font-serif;
+.pageContainer {
+  @apply container;
+  @apply mx-auto;
+}
 
-    margin-bottom: 2rem;
+@screen lg {
+  @apply px-16;
+}
+
+.sectionTitle {
+  @apply text-4xl;
+  @apply font-serif;
+
+  margin-bottom: 2rem;
 }

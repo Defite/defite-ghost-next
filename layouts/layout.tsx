@@ -1,7 +1,7 @@
-import styles from './layout.module.css'
 import Head from 'next/head'
-import SocialFooter from '../components/SocialFooter/SocialFooter'
+// import SocialFooter from '../components/SocialFooter/SocialFooter'
 import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
@@ -13,7 +13,8 @@ const Layout: React.FunctionComponent = ({ children }) => {
       </Head>
       <Header />
       <main>{children}</main>
-      <SocialFooter />
+      {/* <SocialFooter /> */}
+      <Footer />
     </div>
   )
 }

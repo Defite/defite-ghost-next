@@ -6,8 +6,9 @@ import Projects from '../components/Projects/Projects'
 
 export default function Home({ posts, projects }: any) {
   return (
-    <div className="container mx-auto px-16">
+    <div className={styles.pageContainer}>
       <Intro />
+      <div id="posts" className="-mt-5 mb-5 h-5 w-5"></div>
       <section>
         <h2 className={styles.sectionTitle}>Posts</h2>
         <PostList items={posts} />

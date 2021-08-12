@@ -1,21 +1,25 @@
 .logo {
-    @apply font-serif;
-    @apply text-xl;
+  @apply font-serif;
+  @apply text-xl;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .avatar {
-    @apply rounded-full;
-    @apply ring-3;
-    @apply ring-blue-600;
+  @apply rounded-full;
+  @apply ring-3;
+  @apply ring-blue-300;
 
-    width: 40px;
-    height: 40px;
-    overflow: hidden;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.avatar:hover {
+  @apply ring-blue-400;
 }
 
 .logoText {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
