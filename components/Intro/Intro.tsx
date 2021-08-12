@@ -20,7 +20,7 @@ const Intro: React.FunctionComponent = () => {
       </h3>
 
       <a href="#posts" className={styles.introButton}>
-        <span>Let's roll</span>
+        <span>Let&apos;s roll</span>
         <span className={styles.introButtonIcon}>&#8595;</span>
       </a>
     </section>
