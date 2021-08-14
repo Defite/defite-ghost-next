@@ -1,5 +1,6 @@
 import PostItem from '../PostItem/PostItem'
 import * as T from './PostList.types'
+import styles from './styles.module.css'
 
 const PostList: React.FunctionComponent<T.IPostList> = ({ items }) => {
   const renderList = () => {
@@ -12,7 +13,7 @@ const PostList: React.FunctionComponent<T.IPostList> = ({ items }) => {
     ))
   }
 
-  return <div className="-mx-5 mb-25">{renderList()}</div>
+  return <div className={styles.grid}>{renderList()}</div>
 }
 
 export default PostList

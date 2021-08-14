@@ -2,21 +2,21 @@ import Intro from '../components/Intro/Intro'
 import PostList from '../components/PostList/PostList'
 import styles from './index.module.css'
 import { getSortedPostsData } from '../lib/utils'
-import Projects from '../components/Projects/Projects'
+// import Projects from '../components/Projects/Projects'
 
 export default function Home({ posts, projects }: any) {
   return (
     <div className={styles.pageContainer}>
       <Intro />
       <div id="posts" className="-mt-5 mb-5 h-5 w-5"></div>
-      <section>
+      <section className="px-1.5rem lg:px-16">
         <h2 className={styles.sectionTitle}>Posts</h2>
         <PostList items={posts} />
       </section>
-      <section>
+      {/* <section className="px-1.5rem lg:px-16">
         <h2 className={styles.sectionTitle}>Projects</h2>
         <Projects projects={projects} />
-      </section>
+      </section> */}
     </div>
   )
 }

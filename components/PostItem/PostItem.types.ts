@@ -4,4 +4,5 @@ export interface IPostItem {
     date: string;
     href: string;
     isFeatured?: boolean;
+    cover?: string;
 }

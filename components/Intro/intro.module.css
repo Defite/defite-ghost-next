@@ -1,14 +1,18 @@
 .intro {
-  @apply px-2rem;
-  @apply py-10rem;
+  @apply px-1.5rem;
+  @apply py-2rem;
+
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .introTitle {
-  @apply text-4rem;
+  @apply text-2rem;
   @apply font-serif;
   @apply font-bold;
+  @apply leading-snug;
 
-  line-height: 1.1;
+  /* line-height: 1.1; */
   margin-bottom: 2.75rem;
 }
 
@@ -17,7 +21,7 @@
 }
 
 .link::after {
-  @apply bg-blue-300;
+  @apply bg-blue-100;
 
   content: '';
   position: absolute;
@@ -48,11 +52,14 @@
   @apply border-blue-400;
   @apply text-xl;
   @apply px-10;
-  @apply py-5;
+  @apply pt-5;
+  @apply pb-4;
   @apply text-blue-400;
   @apply space-x-3;
+  @apply shadow-xl;
 
   cursor: pointer;
+  display: none;
 }
 
 .introButton:hover {
@@ -70,13 +77,21 @@
   animation: 'bounce' 1s infinite;
 }
 
-@screen xl {
+@screen md {
+  .introTitle {
+    @apply text-5.5rem;
+
+    line-height: 1.1;
+  }
+
+  .introButton {
+    display: block;
+  }
+}
+
+@screen lg {
   .intro {
     @apply px-3rem;
     @apply py-8rem;
-  }
-
-  .introTitle {
-    @apply text-5.2rem;
   }
 }

@@ -1,0 +1,8 @@
+.grid {
+  @apply -mx-5;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  grid-gap: 3rem;
+  margin: 2rem 0;
+}
