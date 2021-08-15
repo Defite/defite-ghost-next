@@ -1,9 +1,17 @@
 import { getPostBySlug, getPostsByField } from '../../lib/utils'
 import PostHeader from '../../components/PostHeader /PostHeader'
 import PostLayout from '../../layouts/post'
-import * as T from './post.types'
 
-const Post: React.FunctionComponent<T.IPostProps> = ({ post }) => {
+export interface IPostProps {
+  post: {
+    title: string
+    date: string
+    description?: string
+    content: string
+  }
+}
+
+const Post: React.FunctionComponent<IPostProps> = ({ post }) => {
   return (
     <div className="mb-10">
       <PostHeader title={post.title} description={post.description} />

@@ -4,7 +4,7 @@ import styles from './index.module.css'
 import { getSortedPostsData } from '../lib/utils'
 // import Projects from '../components/Projects/Projects'
 
-export default function Home({ posts, projects }: any) {
+export default function Home({ posts /*, projects*/ }: any) {
   return (
     <div className={styles.pageContainer}>
       <Intro />
@@ -31,4 +31,8 @@ export async function getStaticProps() {
       projects,
     },
   }
+}
+
+export const config = {
+  unstable_runtimeJS: false,
 }

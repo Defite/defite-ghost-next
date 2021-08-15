@@ -9,10 +9,11 @@
     "lint": "prettier --write \"{components,layouts,lib,pages}/**/*.{js,tsx}\" && next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.22",
-    "@mdx-js/runtime": "^1.6.22",
+    "@mdx-js/loader": "next",
+    "@mdx-js/runtime": "next",
     "@next/mdx": "^11.1.0",
     "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",

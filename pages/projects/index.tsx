@@ -2,7 +2,7 @@ import PostHeader from '../../components/PostHeader /PostHeader'
 import Projects from '../../components/Projects/Projects'
 import { getSortedPostsData } from '../../lib/utils'
 
-const ProjectsIndex: React.FunctionComponent = ({ projects }) => {
+const ProjectsIndex: React.FunctionComponent<any> = ({ projects }) => {
   return (
     <div>
       <PostHeader title="Projects" />
