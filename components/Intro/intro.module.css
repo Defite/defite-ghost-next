@@ -68,13 +68,8 @@
 }
 
 .introButtonIcon {
-  @apply inline-block;
-  @apply transition;
-  @apply ease-in-out;
-
+  display: inline-block;
   vertical-align: sub;
-
-  animation: 'bounce' 1s infinite;
 }
 
 @screen md {

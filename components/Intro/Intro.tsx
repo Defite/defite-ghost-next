@@ -21,7 +21,9 @@ const Intro: React.FunctionComponent = () => {
 
       <a href="#posts" className={styles.introButton}>
         <span>Let&apos;s roll</span>
-        <span className={styles.introButtonIcon}>&#8595;</span>
+        <span className={`animate-bounce ${styles.introButtonIcon}`}>
+          &#8595;
+        </span>
       </a>
     </section>
   )
