@@ -5,19 +5,19 @@ const Nav: React.FunctionComponent = () => {
   return (
     <nav>
       <ul className={styles.navList}>
-        <li>
+        <li className={styles.navItem}>
           <Link href="/posts">
-            <a className={styles.navItem}>Blog</a>
+            <a>Blog</a>
           </Link>
         </li>
-        <li>
+        <li className={styles.navItem}>
           <Link href="/projects">
-            <a className={styles.navItem}>Projects</a>
+            <a>Projects</a>
           </Link>
         </li>
-        <li>
+        <li className={styles.navItem}>
           <Link href="/about">
-            <a className={styles.navItem}>About</a>
+            <a>About</a>
           </Link>
         </li>
       </ul>

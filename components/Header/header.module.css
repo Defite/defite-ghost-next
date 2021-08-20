@@ -1,12 +1,21 @@
 .header {
   @apply px-1.5rem;
   @apply py-1.5rem;
+  @apply space-y-6;
 
   width: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: space-between;
   align-items: center;
+}
+
+@screen xsm {
+  .header {
+    @apply space-y-0;
+
+    flex-direction: row;
+  }
 }
 
 @screen lg {

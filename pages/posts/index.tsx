@@ -6,7 +6,7 @@ const BlogIndex: React.FunctionComponent<any> = ({ allPostsData }) => {
   return (
     <div>
       <PostHeader title="Blog" />
-      <div className="container mx-auto px-16">
+      <div className="container mx-auto px-4 sm:px-16">
         <PostList items={allPostsData} />
       </div>
     </div>
