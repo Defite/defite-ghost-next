@@ -9,7 +9,10 @@ export default defineConfig({
     extend: {
       fontFamily: {
         serif: ['Merriweather', 'serif']
-      }
+      },
+      screens: {
+        'xsm': { min: '425px'},
+      },
     }
   },
   plugins: [
