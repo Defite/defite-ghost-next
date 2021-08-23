@@ -12,6 +12,7 @@
     "@mdx-js/loader": "next",
     "@mdx-js/runtime": "next",
     "@next/mdx": "^11.1.0",
+    "@svgr/webpack": "^5.5.0",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "11.1.0",

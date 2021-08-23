@@ -1,0 +1,21 @@
+.btn {
+  @apply ring;
+  @apply p-4;
+  @apply z-20;
+
+  position: relative;
+}
+
+.btnIcon {
+  @apply -mt-0.75rem;
+  @apply -ml-0.75rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@screen md {
+  .btn {
+    display: none;
+  }
+}

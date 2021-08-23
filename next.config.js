@@ -9,6 +9,12 @@ module.exports = withMDX({
     }
 
     config.plugins.push(new WindiCSS())
+
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
+
     return config
   },
 })

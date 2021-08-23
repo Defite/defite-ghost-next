@@ -1,6 +1,7 @@
 .logo {
   @apply font-serif;
   @apply text-xl;
+  @apply z-20;
 
   display: flex;
   align-items: center;
