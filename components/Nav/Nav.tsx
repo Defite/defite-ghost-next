@@ -12,7 +12,7 @@ const Nav: FunctionComponent<INav> = ({ opened, setOpen }) => {
     ? 'duration-200 ease-out opacity-100 transform scale-100'
     : 'duration-200 ease-in opacity-0 transform scale-95'
 
-  const onLinkClick = () => setOpen(false)
+  const onLinkClick = () => setTimeout(() => setOpen(false), 500)
 
   return (
     <nav
