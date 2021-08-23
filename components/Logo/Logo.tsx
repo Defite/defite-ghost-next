@@ -3,10 +3,10 @@ import styles from './logo.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Logo: React.FunctionComponent<T.ILogo> = ({ name, avatar }) => {
+const Logo: React.FunctionComponent<T.ILogo> = ({ name, avatar, onClick }) => {
   return (
     <Link href="/">
-      <a className={styles.logo}>
+      <a className={styles.logo} onClick={onClick}>
         {avatar && (
           <span className={styles.avatar}>
             <Image src={avatar} width="40" height="40" alt={name} />

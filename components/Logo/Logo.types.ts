@@ -1,4 +1,5 @@
 export interface ILogo {
-    name: string;
-    avatar?: string;
+  name: string
+  avatar?: string
+  onClick?: () => void
 }

@@ -15,6 +15,6 @@ html {
 
 /* Freeze! 🚔 */
 body.freeze {
-  position: fixed;
+  /* position: fixed; */
   overflow: hidden;
 }

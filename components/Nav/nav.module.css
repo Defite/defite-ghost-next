@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .navItem {
-  @apply text-6xl;
+  @apply text-4xl;
   @apply font-bold;
 }
 
