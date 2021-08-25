@@ -14,8 +14,12 @@ export interface IPostProps {
 const Post: React.FunctionComponent<IPostProps> = ({ post }) => {
   return (
     <div className="mb-10">
-      <PostHeader title={post.title} description={post.description} />
-      <PostLayout className="prose md:prose-lg mx-auto" {...post} />
+      <PostHeader
+        title={post.title}
+        description={post.description}
+        theme="background"
+      />
+      <PostLayout className="prose md:prose-lg mx-auto <md:px-5" {...post} />
     </div>
   )
 }

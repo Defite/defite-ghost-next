@@ -5,7 +5,7 @@ import { getSortedPostsData } from '../../lib/utils'
 const BlogIndex: React.FunctionComponent<any> = ({ allPostsData }) => {
   return (
     <div>
-      <PostHeader title="Blog" />
+      <PostHeader title="Blog" theme="simple" />
       <div className="container mx-auto px-4 sm:px-16">
         <PostList items={allPostsData} />
       </div>

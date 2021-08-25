@@ -1,6 +1,12 @@
 .postHeader {
-  @apply mb-15;
-  @apply py-20;
+  /* @apply mb-15; */
+  @apply mb-5;
+  /* @apply py-20; */
+  @apply py-5;
+  @apply px-5;
+}
+
+.postHeaderBackground {
   @apply bg-gray-200;
 }
 
@@ -10,11 +16,12 @@
 
 .postHeaderTitle {
   @apply font-serif;
-  @apply text-6xl;
-  @apply text-center;
+  @apply text-3xl;
+  @apply text-left;
   @apply leading-snug;
   @apply container;
   @apply mx-auto;
+  @apply mb-5;
 }
 
 .postHeaderDescription {
@@ -22,6 +29,27 @@
   @apply text-gray-600;
   @apply mx-auto;
 
-  text-align: center;
-  max-width: 65ch;
+  max-width: 735px;
+}
+
+@screen md {
+  .postHeader {
+    @apply mb-15;
+    @apply py-20;
+    @apply bg-gray-200;
+  }
+
+  .postHeaderTitle {
+    @apply text-6xl;
+  }
+}
+
+@screen lg {
+  .postHeader {
+    @apply pb-10;
+  }
+
+  .postHeaderTitle {
+    text-align: center;
+  }
 }

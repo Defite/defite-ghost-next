@@ -1,6 +1,5 @@
 .nav {
   @apply bg-white;
-  @apply z-10;
   @apply origin-center;
 
   position: absolute;
