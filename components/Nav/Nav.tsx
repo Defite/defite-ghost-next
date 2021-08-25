@@ -57,8 +57,8 @@ const Nav: FunctionComponent<INav> = ({ opened, setOpen }) => {
     >
       <ul className={styles.navList}>
         {menu.map((item) => (
-          <li className={styles.navItem}>
-            <Link href={item.href} key={`menu-nav-${item.title}`}>
+          <li className={styles.navItem} key={`menu-nav-${item.title}`}>
+            <Link href={item.href}>
               <a onClick={onLinkClick}>{item.title}</a>
             </Link>
           </li>
