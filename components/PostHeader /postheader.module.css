@@ -12,6 +12,7 @@
 
 .postHeaderInner {
   @apply mx-auto;
+  max-width: 960px;
 }
 
 .postHeaderTitle {
@@ -19,17 +20,12 @@
   @apply text-3xl;
   @apply text-left;
   @apply leading-snug;
-  @apply container;
-  @apply mx-auto;
   @apply mb-5;
 }
 
 .postHeaderDescription {
   @apply text-xl;
   @apply text-gray-600;
-  @apply mx-auto;
-
-  max-width: 735px;
 }
 
 @screen md {
@@ -50,6 +46,11 @@
   }
 
   .postHeaderTitle {
+    text-align: left;
+  }
+
+  .alignCenter .postHeaderTitle,
+  .alignCenter .postHeaderDescription {
     text-align: center;
   }
 }
