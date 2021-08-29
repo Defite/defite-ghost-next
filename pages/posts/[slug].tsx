@@ -1,4 +1,5 @@
 import { getPostBySlug, getPostsByField } from '../../lib/utils'
+import Storyblok from '../../lib/storyblok'
 import PostHeader from '../../components/PostHeader /PostHeader'
 import PostLayout from '../../layouts/post'
 
@@ -41,6 +42,10 @@ export async function getStaticProps({ params }: any) {
     'description',
     'content',
   ])
+
+  let { data } = await Storyblok.get(`cdn/stories/posts/${params.slug}`, {})
+
+  console.log('my post aka story', data.story)
 
   return {
     props: {
