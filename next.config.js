@@ -17,4 +17,7 @@ module.exports = withMDX({
 
     return config
   },
+  images: {
+    domains: ['a.storyblok.com'],
+  },
 })

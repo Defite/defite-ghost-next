@@ -5,7 +5,7 @@ import styles from './postitem.module.css'
 
 const PostItem: React.FunctionComponent<T.IPostItem> = ({
   title,
-  date,
+  // date,
   description,
   href,
   isFeatured,
