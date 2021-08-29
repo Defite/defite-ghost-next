@@ -13,6 +13,7 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
         title={story.content.title}
         description={render(story.content.description)}
         theme="background"
+        align="center"
       />
 
       <PostLayout className="prose md:prose-lg mx-auto <md:px-5">
