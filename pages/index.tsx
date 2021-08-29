@@ -31,6 +31,7 @@ export async function getStaticProps(context: any) {
   const projects = getSortedPostsData('projects')
   let params = {
     version: 'draft', // or 'published'
+    cv: Date.now(),
   }
 
   if (context.preview) {
