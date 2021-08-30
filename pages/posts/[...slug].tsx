@@ -1,8 +1,8 @@
-// import DynamicComponent from '../../components/DynamicComponent'
 import Storyblok, { useStoryblok } from '../../lib/storyblok'
 import PostHeader from '../../components/PostHeader /PostHeader'
 import { render } from 'storyblok-rich-text-react-renderer-ts'
 import PostLayout from '../../layouts/post'
+import PostImage from '../../components/PostImage/PostImage'
 
 const Post: React.FunctionComponent<any> = ({ story, preview }) => {
   story = useStoryblok(story, preview)
@@ -17,7 +17,13 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
       />
 
       <PostLayout className="prose md:prose-lg mx-auto <md:px-5">
-        {render(story.content.long_text)}
+        {render(story.content.long_text, {
+          blokResolvers: {
+            ['NextPicture']: (props) => (
+              <PostImage src={props.image.filename} title={props.title} />
+            ),
+          },
+        })}
       </PostLayout>
     </div>
   )

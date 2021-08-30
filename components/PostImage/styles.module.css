@@ -1,0 +1,7 @@
+.postImageWrap {
+}
+
+.postImage {
+  padding-top: calc((3 / 4) * 100%);
+  position: relative;
+}

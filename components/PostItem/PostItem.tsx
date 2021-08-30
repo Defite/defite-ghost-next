@@ -27,7 +27,7 @@ const PostItem: React.FunctionComponent<T.IPostItem> = ({
       {renderCover()}
       <div className={styles.postItemInner}>
         <h2 className={styles.title}>{title}</h2>
-        <p className={styles.description}>{description}</p>
+        <div className={styles.description}>{description}</div>
         <Link href={href}>
           <a className={styles.link}></a>
         </Link>

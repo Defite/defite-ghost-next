@@ -1,6 +1,7 @@
 import SbEditable from 'storyblok-react'
 import Page from './Page'
 import Intro from './Intro/Intro'
+import PostImage from './PostImage/PostImage'
 
 // resolve Storyblok components to Next.js components
 const Components = {
