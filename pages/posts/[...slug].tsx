@@ -19,6 +19,7 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
       <PostLayout className="prose md:prose-lg mx-auto <md:px-5">
         {render(story.content.long_text, {
           blokResolvers: {
+            // eslint-disable-next-line react/display-name
             ['NextPicture']: (props) => (
               <PostImage src={props.image.filename} title={props.title} />
             ),
