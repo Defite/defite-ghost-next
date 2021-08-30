@@ -1,6 +1,6 @@
 export interface IPostHeader {
   title: string
-  description?: string
+  description?: any
   theme: 'simple' | 'background'
   align?: 'center'
 }
