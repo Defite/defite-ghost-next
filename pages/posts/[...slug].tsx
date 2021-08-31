@@ -9,12 +9,23 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
   story = useStoryblok(story, preview)
 
   const { metadata } = story.content
+  const defaultShareImage = 'https://nikita.codes/share.png'
 
   return (
     <div className="mb-10">
       <Head>
         <title>{metadata.title} – Nikita Codes</title>
         <meta name="description" content={metadata.description} />
+
+        <meta
+          property="og:image"
+          content={metadata.og_image || defaultShareImage}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:image"
+          content={metadata.twitter_image || defaultShareImage}
+        />
       </Head>
       <PostHeader
         title={story.content.title}

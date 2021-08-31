@@ -13,13 +13,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
           content="Place where Nikita Makhov writes about front-end web development"
         />
         <link rel="icon" href="/favicon.ico" />
-
-        <meta property="og:image" content="https://nikita.codes/share.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content="https://nikita.codes/share.png"
-        />
       </Head>
       <Header />
       <main>{children}</main>

@@ -1,6 +1,7 @@
 import PostList from '../components/PostList/PostList'
 import Storyblok, { useStoryblok } from '../lib/storyblok'
 import DynamicComponent from '../components/DynamicComponent'
+import Head from 'next/dist/shared/lib/head'
 // import Projects from '../components/Projects/Projects'
 
 export default function Home({ posts, story, preview /*, projects*/ }: any) {
@@ -8,6 +9,14 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
 
   return (
     <div className="container mx-auto">
+      <Head>
+        <meta property="og:image" content="https://nikita.codes/share.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:image"
+          content="https://nikita.codes/share.png"
+        />
+      </Head>
       <DynamicComponent blok={story.content} />
       <div id="posts" className="-mt-5 mb-5 h-5 w-5"></div>
       <section className="px-1.5rem lg:px-16">

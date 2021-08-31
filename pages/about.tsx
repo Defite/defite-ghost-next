@@ -8,6 +8,12 @@ const AboutPage: React.FunctionComponent = () => {
       <Head>
         <title>About – Nikita Codes</title>
         <meta name="description" content="Page about me and my blog" />
+        <meta property="og:image" content="https://nikita.codes/share.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:image"
+          content="https://nikita.codes/share.png"
+        />
       </Head>
       <PostHeader
         title="About me"

@@ -11,6 +11,13 @@ const BlogIndex: React.FunctionComponent<any> = ({ posts, preview }) => {
       <Head>
         <title>Blog – Nikita Codes</title>
         <meta name="description" content="List of all my posts" />
+
+        <meta property="og:image" content="https://nikita.codes/share.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:image"
+          content="https://nikita.codes/share.png"
+        />
       </Head>
       <PostHeader title="Blog" theme="simple" align="center" />
       <div className="container mx-auto px-4 sm:px-16">
