@@ -1,5 +1,4 @@
 import PostList from '../components/PostList/PostList'
-import styles from './index.module.css'
 import Storyblok, { useStoryblok } from '../lib/storyblok'
 import DynamicComponent from '../components/DynamicComponent'
 // import Projects from '../components/Projects/Projects'
@@ -8,11 +7,11 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
   story = useStoryblok(story, preview)
 
   return (
-    <div className={styles.pageContainer}>
+    <div className="container mx-auto">
       <DynamicComponent blok={story.content} />
       <div id="posts" className="-mt-5 mb-5 h-5 w-5"></div>
       <section className="px-1.5rem lg:px-16">
-        <h2 className={styles.sectionTitle}>Posts</h2>
+        <h2 className="text-4xl font-serif mb-2rem">Posts</h2>
         <PostList items={posts.stories} />
       </section>
       {/* <section className="px-1.5rem lg:px-16">
