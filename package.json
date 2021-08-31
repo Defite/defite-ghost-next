@@ -11,7 +11,7 @@
   "dependencies": {
     "@mdx-js/loader": "next",
     "@mdx-js/runtime": "next",
-    "@next/mdx": "^11.1.0",
+    "@next/mdx": "^11.1.1",
     "@svgr/webpack": "^5.5.0",
     "axios": "^0.21.1",
     "gray-matter": "^4.0.3",
