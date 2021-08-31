@@ -1,12 +1,17 @@
 import PostHeader from '../../components/PostHeader /PostHeader'
 import PostList from '../../components/PostList/PostList'
 import Storyblok, { useStoryblok } from '../../lib/storyblok'
+import Head from 'next/dist/shared/lib/head'
 
 const BlogIndex: React.FunctionComponent<any> = ({ posts, preview }) => {
   posts = useStoryblok(posts, preview)
 
   return (
     <div>
+      <Head>
+        <title>Blog – Nikita Codes</title>
+        <meta name="description" content="List of all my posts" />
+      </Head>
       <PostHeader title="Blog" theme="simple" align="center" />
       <div className="container mx-auto px-4 sm:px-16">
         <PostList items={posts.stories} />

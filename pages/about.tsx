@@ -1,9 +1,14 @@
 import PostHeader from '../components/PostHeader /PostHeader'
 import PostLayout from '../layouts/post'
+import Head from 'next/dist/shared/lib/head'
 
 const AboutPage: React.FunctionComponent = () => {
   return (
     <div className="mb-10">
+      <Head>
+        <title>About – Nikita Codes</title>
+        <meta name="description" content="Page about me and my blog" />
+      </Head>
       <PostHeader
         title="About me"
         description="A few words about me and this web page"

@@ -3,12 +3,19 @@ import PostHeader from '../../components/PostHeader /PostHeader'
 import { render } from 'storyblok-rich-text-react-renderer-ts'
 import PostLayout from '../../layouts/post'
 import PostImage from '../../components/PostImage/PostImage'
+import Head from 'next/head'
 
 const Post: React.FunctionComponent<any> = ({ story, preview }) => {
   story = useStoryblok(story, preview)
 
+  const { metadata } = story.content
+
   return (
     <div className="mb-10">
+      <Head>
+        <title>{metadata.title} – Nikita Codes</title>
+        <meta name="description" content={metadata.description} />
+      </Head>
       <PostHeader
         title={story.content.title}
         description={render(story.content.description)}
