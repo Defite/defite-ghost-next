@@ -9,13 +9,18 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
   story = useStoryblok(story, preview)
 
   const { metadata } = story.content
+  const metaTags = metadata || {
+    title: story.content.title,
+    description: '',
+  }
+
   const defaultShareImage = 'https://nikita.codes/share.png'
 
   return (
     <div className="mb-10">
       <Head>
-        <title>{metadata.title} – Nikita Codes</title>
-        <meta name="description" content={metadata.description} />
+        <title>{metaTags.title} – Nikita Codes</title>
+        <meta name="description" content={metaTags.description} />
 
         <meta
           property="og:image"
