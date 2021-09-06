@@ -13,7 +13,7 @@
     "@mdx-js/runtime": "next",
     "@next/mdx": "^11.1.2",
     "@svgr/webpack": "^5.5.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.3",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "11.1.2",
