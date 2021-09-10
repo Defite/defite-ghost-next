@@ -4905,10 +4905,10 @@ stacktrace-parser@0.1.10:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
 
-storyblok-js-client@^4.1.4:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.1.4.tgz#55f4d3012c6d78cc1bc0ffa58c25e991e5003397"
-  integrity sha512-gwQ2JZD7Dj8QdK1Rz1ypH70W+wES7p46FYVUHA/n20HxaPQ6P5bFwCFdrJIjgeoVRwaM1JnXx4E8g+uJT+wYSA==
+storyblok-js-client@^4.1.5:
+  version "4.1.5"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.1.5.tgz#d0ceb811a9b4847850bf4856046e01816ac221c6"
+  integrity sha512-0cd9AtU1JE0Q7lyda7NSyfwasvuy3X5v9z1kMm4TWmcbUiQEjUjiNaZ9o0bu7iTpgVeatoa2j6XGLRqPQKz8dw==
   dependencies:
     qs "^6.9.4"
 
