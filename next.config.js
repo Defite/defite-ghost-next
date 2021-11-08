@@ -1,4 +1,4 @@
-const WindiCSS = require('windicss-webpack-plugin').default
+const WindiCSS = require('windicss-webpack-plugin')
 const withMDX = require('@next/mdx')()
 
 module.exports = withMDX({
