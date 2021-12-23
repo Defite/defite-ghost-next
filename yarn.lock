@@ -1586,27 +1586,27 @@
     "@typescript-eslint/types" "5.7.0"
     eslint-visitor-keys "^3.0.0"
 
-"@windicss/config@1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.5.4.tgz#69b10fb02cfea1103a4ca9a65a738ef7d3734b29"
-  integrity sha512-muRPFulqh7nU3VrsPb5+k6ulNyiw8VGg62zAWRZIBfeCRXZb2gV1Q8a/tPn8X1T/+HTt4f/1bzFiusqMKscmlw==
+"@windicss/config@1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.6.1.tgz#f0db67e8d426b961b65f746015b7d17e9f766094"
+  integrity sha512-E4FKtWdYl5HwFknBQ+Z2JIF58TZiR4/ZiP8B30sfRxNlG6clh4agn5MJqTb4ER0MLkDb30Hugl2tGun0AQNbFw==
   dependencies:
     debug "^4.3.3"
     jiti "^1.12.9"
-    windicss "^3.2.1"
+    windicss "^3.4.0"
 
-"@windicss/plugin-utils@^1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.5.4.tgz#a283b1fe040b9559542462c80bbf1db9fd2850e8"
-  integrity sha512-fS4y52OYB9rIzEUolIWIrrHYuaQfcqTaX3ISbFUiNbvNgH97JATjzB2iOnNqWNy6pH3M8RP0TqYQOOCCeanDoA==
+"@windicss/plugin-utils@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.6.1.tgz#0459428beaa3b9053838c047ccb6001493a926a9"
+  integrity sha512-hFQY27bOr9SSpekIvSwBpIX25nR4cwrU5/1kJFqCwAzqyazvd7U9c/iI1E2sTEQOkPbpTTJkY2Act21Q70oSDQ==
   dependencies:
     "@antfu/utils" "^0.3.0"
-    "@windicss/config" "1.5.4"
+    "@windicss/config" "1.6.1"
     debug "^4.3.3"
     fast-glob "^3.2.7"
     magic-string "^0.25.7"
     micromatch "^4.0.4"
-    windicss "^3.2.1"
+    windicss "^3.4.0"
 
 acorn-dynamic-import@^4.0.0:
   version "4.0.0"
@@ -5287,12 +5287,12 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss-webpack-plugin@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/windicss-webpack-plugin/-/windicss-webpack-plugin-1.6.1.tgz#2b73f79811d4963950cf49d1e84f30cde9a058e1"
-  integrity sha512-hW7EDINnwCkmRr3fcrV9GsRsIn6sNdJLLM03UOL9RoCUGRa+2Szk/yXl0rq2uTCSmCp0yHrRO/5zu09DBQoUBQ==
+windicss-webpack-plugin@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/windicss-webpack-plugin/-/windicss-webpack-plugin-1.6.2.tgz#273def94ca566ab86fc8cfb7acf9f9a67c644922"
+  integrity sha512-1NhvBVmClIgxnC6C50RlqdpL9klF4g1JwJAoDNCdY0fO6o5GP6hO+E3xGCWI38l4Ij36JQZ4/CxFKWjdixXFBQ==
   dependencies:
-    "@windicss/plugin-utils" "^1.5.4"
+    "@windicss/plugin-utils" "^1.6.1"
     debug "^4.3.3"
     loader-utils "^2.0.0"
     lodash "^4.17.21"
@@ -5301,7 +5301,7 @@ windicss-webpack-plugin@^1.6.1:
     webpack-virtual-modules "^0.4.3"
     windicss "^3.4.0"
 
-windicss@^3.2.1, windicss@^3.4.0:
+windicss@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.4.0.tgz#2da63739089b5c6f6ca1b7cc28bd855cd5bc95cc"
   integrity sha512-X+9Y1/FPxX253Xo4Hk/qfVuvoAxgKx686Z6yHxmBFMH7wRCPdRO42na9k/yEnrW6EqCFJP/GcMIHn3QENaE42g==
