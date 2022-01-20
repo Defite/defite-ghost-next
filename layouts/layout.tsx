@@ -1,5 +1,4 @@
 import Head from 'next/head'
-// import SocialFooter from '../components/SocialFooter/SocialFooter'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 
@@ -16,7 +15,6 @@ const Layout: React.FunctionComponent = ({ children }) => {
       </Head>
       <Header />
       <main>{children}</main>
-      {/* <SocialFooter /> */}
       <Footer />
     </div>
   )
