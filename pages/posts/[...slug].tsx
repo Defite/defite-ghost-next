@@ -51,7 +51,6 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
               />
             ),
             ['youtube']: (props) => {
-              console.log('video', props)
               return <div dangerouslySetInnerHTML={{ __html: props.video }} />
             },
           },
