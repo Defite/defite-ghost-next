@@ -24,12 +24,12 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
 
         <meta
           property="og:image"
-          content={metadata.og_image || defaultShareImage}
+          content={(metadata && metadata.og_image) || defaultShareImage}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content={metadata.twitter_image || defaultShareImage}
+          content={(metadata && metadata.twitter_image) || defaultShareImage}
         />
       </Head>
       <PostHeader
@@ -44,8 +44,16 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
           blokResolvers: {
             // eslint-disable-next-line react/display-name
             ['NextPicture']: (props) => (
-              <PostImage src={props.image.filename} title={props.title} />
+              <PostImage
+                src={props.image.filename}
+                title={props.title}
+                caption={props.image.name}
+              />
             ),
+            ['youtube']: (props) => {
+              console.log('video', props)
+              return <div dangerouslySetInnerHTML={{ __html: props.video }} />
+            },
           },
         })}
       </PostLayout>

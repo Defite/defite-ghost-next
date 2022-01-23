@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react'
 import { IPostImage } from './PostImage.types'
 import styles from './styles.module.css'
 
-const PostImage: FunctionComponent<IPostImage> = ({ src, title }) => {
+const PostImage: FunctionComponent<IPostImage> = ({ src, title, caption }) => {
   if (!src) {
     return null
   }
@@ -21,7 +21,7 @@ const PostImage: FunctionComponent<IPostImage> = ({ src, title }) => {
           alt={title}
         />
       </div>
-      {title && <figcaption>{title}</figcaption>}
+      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   )
 }
