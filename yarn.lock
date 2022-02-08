@@ -4245,10 +4245,10 @@ stable@^0.1.8:
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
 
-storyblok-js-client@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.2.0.tgz#f1b64b256b071aef14d915e326210a73f18a0259"
-  integrity sha512-dAeZfqFrHdxyvGFEVv0glOTxLx1Y2faGN39qeLZLOGCoeK49Xg53hOl8BddxqrjTqTp93GzbqLx04r/hzXrfxA==
+storyblok-js-client@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.2.1.tgz#6d8d2e16807b4a9ae1ee0d6c1a7ef7bad42b5f48"
+  integrity sha512-TQfsyBJ6WcjpHFGKYXHy5kef4jXOI/j54wrJmw4Ld13e76dr81EvqZIrwehKPTcRID9+a4rbA0ykn3r3aBpArw==
 
 storyblok-react@^0.1.2:
   version "0.1.2"
