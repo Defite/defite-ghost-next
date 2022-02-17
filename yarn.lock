@@ -1445,22 +1445,22 @@
     "@typescript-eslint/types" "5.10.1"
     eslint-visitor-keys "^3.0.0"
 
-"@windicss/config@1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.6.3.tgz#eff67eecc763d0080995068608d483799413bc82"
-  integrity sha512-1kjdy4tyYLD4sCB4DS+3Lt1Odnde03z4Rz3EUqyWJ7SiBEWMgRk1L797SsgEH4+W1DjLBZLs1SVYzaTO/3UdJA==
+"@windicss/config@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@windicss/config/-/config-1.7.0.tgz#bdfe45f80d483fc112a374af1ea39da5b68d56ba"
+  integrity sha512-jP+SYEUMTcvEQexYAeaIGKWq3sE+yv0myyOCph7Glm/YZE2ZCK1GukI1oDG6fcVer121EQzCY4Rx11trb3oSZg==
   dependencies:
     debug "^4.3.3"
     jiti "^1.12.9"
     windicss "^3.4.3"
 
-"@windicss/plugin-utils@^1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.6.3.tgz#b321804b4e84e7a20a5c79f50c7fd83eb8202917"
-  integrity sha512-tY20pAdV8YOlCj/5Teh078n/YbekbE5qOmlNgcl+S10KqitUGB9+Qss/xE0HULACmCXBO9XeLUcAPGao79lAnA==
+"@windicss/plugin-utils@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-1.7.0.tgz#9c79bda7b6fb4bf9fe019bafb7a1ade8e7f97013"
+  integrity sha512-4zxTIhpGaia4FTxL/c20GQU2bK3bqToerdErvDzwLqWQECVGt7vTGFQd3e4XMpfR6Ujgk4/p7fCHv/F15R/pkA==
   dependencies:
     "@antfu/utils" "^0.4.0"
-    "@windicss/config" "1.6.3"
+    "@windicss/config" "1.7.0"
     debug "^4.3.3"
     fast-glob "^3.2.11"
     magic-string "^0.25.7"
@@ -4735,12 +4735,12 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss-webpack-plugin@^1.6.4:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/windicss-webpack-plugin/-/windicss-webpack-plugin-1.6.4.tgz#a684d52f1304c936338e71a03b4b3896f36ac75f"
-  integrity sha512-/ac7Y3eprrLnlBGoHIQG5V29OXZsYwM5RKpcp9+kxspN07sXKGGGNno1tScwY2H0/lkICMPinZa0iijf21ifzg==
+windicss-webpack-plugin@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/windicss-webpack-plugin/-/windicss-webpack-plugin-1.6.5.tgz#f016c059b6f8ea6bf3948f91d74d9590dd354768"
+  integrity sha512-vvRSQgViYjnB4xOHs4pbDYLR4pIx4FGUYHwKSn89e+iMb97XM4CeUim1AtQ9q2aIO3K7DVewbNlk7MYOOkMx/w==
   dependencies:
-    "@windicss/plugin-utils" "^1.6.3"
+    "@windicss/plugin-utils" "^1.7.0"
     debug "^4.3.3"
     loader-utils "^2.0.0"
     lodash "^4.17.21"
