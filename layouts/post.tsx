@@ -1,4 +1,10 @@
-const PostLayout: React.FunctionComponent<any> = ({
+interface PostLayoutProps {
+  children: React.ReactNode
+  className: string
+  content?: React.ReactNode
+}
+
+const PostLayout: React.FunctionComponent<PostLayoutProps> = ({
   content,
   className,
   children,

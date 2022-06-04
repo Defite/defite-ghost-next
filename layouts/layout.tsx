@@ -2,7 +2,11 @@ import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 
-const Layout: React.FunctionComponent = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Head>
