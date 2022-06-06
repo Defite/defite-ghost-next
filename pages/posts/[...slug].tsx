@@ -17,7 +17,7 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
   const defaultShareImage = 'https://nikita.codes/share.png'
 
   return (
-    <div className="mb-10">
+    <main className="mb-10">
       <Head>
         <title>{metaTags.title} – Nikita Codes</title>
         <meta name="description" content={metaTags.description} />
@@ -56,7 +56,7 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
           },
         })}
       </PostLayout>
-    </div>
+    </main>
   )
 }
 

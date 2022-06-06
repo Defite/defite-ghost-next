@@ -9,9 +9,15 @@ const Header: React.FunctionComponent = () => {
 
   return (
     <header className={styles.header}>
-      <Logo name="Defite" avatar="/avatar.jpg" onClick={() => setOpen(false)} />
-      <Nav opened={opened} setOpen={setOpen} />
-      <Burger opened={opened} setOpen={setOpen} />
+      <div className={styles.headerInner}>
+        <Logo
+          name="Defite"
+          avatar="/avatar.jpg"
+          onClick={() => setOpen(false)}
+        />
+        <Nav opened={opened} setOpen={setOpen} />
+        <Burger opened={opened} setOpen={setOpen} />
+      </div>
     </header>
   )
 }

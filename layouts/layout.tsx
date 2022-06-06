@@ -3,12 +3,12 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Nikita Codes</title>
         <meta
@@ -18,9 +18,9 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>{children}</main>
+      {children}
       <Footer />
-    </div>
+    </>
   )
 }
 

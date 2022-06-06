@@ -8,7 +8,7 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
   story = useStoryblok(story, preview)
 
   return (
-    <div className="container mx-auto">
+    <main className="container mx-auto">
       <Head>
         <meta property="og:image" content="https://nikita.codes/share.png" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -18,7 +18,7 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
         />
       </Head>
       <DynamicComponent blok={story.content} />
-      <div id="posts" className="-mt-5 mb-5 h-5 w-5"></div>
+      <section id="posts" className="-mt-5 mb-5 h-5 w-5"></section>
       <section className="px-1.5rem lg:px-16">
         <h2 className="text-4xl font-serif mb-2rem">Posts</h2>
         <PostList items={posts.stories} />
@@ -27,7 +27,7 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
         <h2 className={styles.sectionTitle}>Projects</h2>
         <Projects projects={projects} />
       </section> */}
-    </div>
+    </main>
   )
 }
 

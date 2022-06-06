@@ -3,6 +3,12 @@
   @apply py-1.5rem;
 
   width: 100%;
+}
+
+.headerInner {
+  @apply container;
+  @apply mx-auto;
+
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
