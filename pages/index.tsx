@@ -45,11 +45,6 @@ export async function getStaticProps(context: any) {
 
   let { data } = await Storyblok.get(`cdn/stories/home`, {})
 
-  // let { data: posts } = await Storyblok.get(`cdn/stories`, {
-  //   starts_with: 'posts',
-  //   per_page: 10,
-  // })
-
   const postsData = await api.posts
     .browse({
       limit: 'all',

@@ -23,6 +23,7 @@ module.exports = withMDX({
       'images.unsplash.com',
       'localhost',
       'static.ghost.org',
+      '933413-defite.tmweb.ru',
     ],
   },
 })

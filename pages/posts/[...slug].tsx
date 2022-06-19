@@ -3,6 +3,7 @@ import PostHeader from '../../components/PostHeader /PostHeader'
 import PostLayout from '../../layouts/post'
 import { api } from '../../lib/ghost'
 import Head from 'next/head'
+import { IPostItem } from '../../components/PostList/PostList.types'
 
 const Post: React.FunctionComponent<any> = ({ story }) => {
   const metaTags = {
@@ -50,17 +51,15 @@ export async function getStaticPaths() {
     starts_with: 'posts',
   })
 
-  let paths: any = []
-  Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
-      return
-    }
+  const postsData = await api.posts
+    .browse({
+      limit: 'all',
+    })
+    .catch((err: any) => console.error(err))
 
-    // get array for slug because of catch all
-    const slug = data.links[linkKey].slug
+  const posts = postsData.filter((item: any) => !item.pagination)
 
-    paths.push('/' + slug)
-  })
+  const paths = posts.map((item: IPostItem) => `/posts/${item.slug}`)
 
   return {
     paths,
