@@ -1,4 +1,3 @@
-import Storyblok, { useStoryblok } from '../../lib/storyblok'
 import PostHeader from '../../components/PostHeader /PostHeader'
 import PostLayout from '../../layouts/post'
 import { api } from '../../lib/ghost'
@@ -47,10 +46,6 @@ const Post: React.FunctionComponent<any> = ({ story }) => {
 }
 
 export async function getStaticPaths() {
-  let { data } = await Storyblok.get('cdn/links/', {
-    starts_with: 'posts',
-  })
-
   const postsData = await api.posts
     .browse({
       limit: 'all',
