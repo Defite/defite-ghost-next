@@ -1,4 +1,5 @@
 import './global.css'
+import './cards.min.css'
 import 'windi.css'
 import type { AppProps } from 'next/app'
 import Layout from '../layouts/layout'

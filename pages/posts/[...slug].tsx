@@ -1,17 +1,13 @@
 import Storyblok, { useStoryblok } from '../../lib/storyblok'
 import PostHeader from '../../components/PostHeader /PostHeader'
-import { render } from 'storyblok-rich-text-react-renderer-ts'
 import PostLayout from '../../layouts/post'
-import PostImage from '../../components/PostImage/PostImage'
+import { api } from '../../lib/ghost'
 import Head from 'next/head'
 
-const Post: React.FunctionComponent<any> = ({ story, preview }) => {
-  story = useStoryblok(story, preview)
-
-  const { metadata } = story.content
-  const metaTags = metadata || {
-    title: story.content.title,
-    description: '',
+const Post: React.FunctionComponent<any> = ({ story }) => {
+  const metaTags = {
+    title: story.title || story.meta_title,
+    description: story.custom_excerpt || story.meta_description,
   }
 
   const defaultShareImage = 'https://nikita.codes/share.png'
@@ -24,37 +20,26 @@ const Post: React.FunctionComponent<any> = ({ story, preview }) => {
 
         <meta
           property="og:image"
-          content={(metadata && metadata.og_image) || defaultShareImage}
+          content={story.og_image || defaultShareImage}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:image"
-          content={(metadata && metadata.twitter_image) || defaultShareImage}
+          content={story.twitter_image || defaultShareImage}
         />
       </Head>
       <PostHeader
-        title={story.content.title}
-        description={render(story.content.description)}
+        title={story.title}
+        description={story.custom_excerpt}
         theme="background"
         align="center"
       />
 
-      <PostLayout className="prose md:prose-lg mx-auto <md:px-5">
-        {render(story.content.long_text, {
-          blokResolvers: {
-            // eslint-disable-next-line react/display-name
-            ['NextPicture']: (props) => (
-              <PostImage
-                src={props.image.filename}
-                title={props.title}
-                caption={props.image.name}
-              />
-            ),
-            ['youtube']: (props) => {
-              return <div dangerouslySetInnerHTML={{ __html: props.video }} />
-            },
-          },
-        })}
+      <PostLayout className="mx-auto <md:px-5 text-base text-gray-700 md:text-lg md:leading-loose">
+        <div
+          className="gh-canvas article-body"
+          dangerouslySetInnerHTML={{ __html: story.html }}
+        />
       </PostLayout>
     </main>
   )
@@ -84,28 +69,17 @@ export async function getStaticPaths() {
 }
 
 /* TODO: fix this any! */
-export async function getStaticProps({ params, preview = false }: any) {
-  let sbParams = {
-    version: 'draft', // or published
-    cv: Date.now(),
-  }
-
-  if (preview) {
-    sbParams.version = 'draft'
-    sbParams.cv = Date.now()
-  }
-
-  let { data } = await Storyblok.get(
-    `cdn/stories/posts/${params.slug}`,
-    sbParams
-  )
+export async function getStaticProps({ params }: any) {
+  const post = await api.posts
+    .read({
+      slug: params.slug,
+    })
+    .catch((err: any) => console.error(err))
 
   return {
     props: {
-      story: data ? data.story : null,
-      preview,
+      story: post,
     },
-    revalidate: 3600,
   }
 }
 

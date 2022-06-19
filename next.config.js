@@ -18,6 +18,11 @@ module.exports = withMDX({
     return config
   },
   images: {
-    domains: ['a.storyblok.com'],
+    domains: [
+      'a.storyblok.com',
+      'images.unsplash.com',
+      'localhost',
+      'static.ghost.org',
+    ],
   },
 })

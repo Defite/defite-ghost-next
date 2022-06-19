@@ -18,3 +18,72 @@ body.freeze {
   /* position: fixed; */
   overflow: hidden;
 }
+
+/* Content grid
+/* ---------------------------------------------------------- */
+
+/* Canvas creates a multi-column, centered grid which the post
+is laid out on top of. Canvas just defines the grid, we don't
+use it for applying any other styles. */
+
+.gh-canvas {
+  display: grid;
+  grid-template-columns:
+      [full-start]
+      minmax(max(4vmin, 20px), auto)
+          [wide-start]
+          minmax(auto, 240px)
+              [main-start]
+                  min(720px, calc(100% - max(8vmin, 40px)))
+              [main-end]
+          minmax(auto, 240px)
+          [wide-end]
+      minmax(max(4vmin, 20px), auto)
+      [full-end]
+;
+}
+
+.gh-canvas img,
+.gh-canvas video {
+  max-width: 100%;
+  height: auto;
+}
+
+.gh-canvas > * {
+  grid-column: main-start / main-end;
+}
+
+.kg-width-wide {
+  grid-column: wide-start / wide-end;
+}
+
+.kg-width-full {
+  grid-column: full-start / full-end;
+}
+
+.kg-width-full img {
+  width: 100%;
+}
+
+.article-body .kg-card+:not(.kg-card):not([id]),
+.article-body :not(.kg-card):not([id])+.kg-card {
+    @apply mt-10;
+}
+.article-body figcaption {
+  @apply text-gray-500;
+  @apply text-base;
+  @apply text-center;
+}
+
+.article-body>[id]:not(:first-child) {
+  @apply mt-14;
+  @apply text-3xl;
+}
+
+.article-body>*+* {
+  @apply mt-6;
+}
+
+.article-body>[id]+* {
+  @apply mt-6;
+}

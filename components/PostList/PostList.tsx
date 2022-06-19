@@ -1,7 +1,6 @@
 import PostItem from '../PostItem/PostItem'
 import * as T from './PostList.types'
 import styles from './styles.module.css'
-import { render } from 'storyblok-rich-text-react-renderer-ts'
 
 const PostList: React.FunctionComponent<T.IPostList> = ({ items }) => {
   const renderList = () => {
@@ -11,10 +10,10 @@ const PostList: React.FunctionComponent<T.IPostList> = ({ items }) => {
 
     return items.map((item, index) => (
       <PostItem
-        title={item.content.title}
-        description={render(item.content.description)}
-        cover={item.content.cover.filename}
-        href={item.full_slug}
+        title={item.title}
+        description={item.custom_excerpt}
+        cover={item.feature_image}
+        href={`/posts/${item.slug}`}
         key={`posts-${index}`}
       />
     ))
