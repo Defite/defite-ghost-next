@@ -12,8 +12,10 @@ const Post: React.FunctionComponent<any> = ({ story }) => {
 
   const defaultShareImage = 'https://nikita.codes/share.png'
 
+  console.log('st', story)
+
   return (
-    <main className="mb-10">
+    <main className="mb-10 gh-article">
       <Head>
         <title>{metaTags.title} – Nikita Codes</title>
         <meta name="description" content={metaTags.description} />
@@ -28,14 +30,9 @@ const Post: React.FunctionComponent<any> = ({ story }) => {
           content={story.twitter_image || defaultShareImage}
         />
       </Head>
-      <PostHeader
-        title={story.title}
-        description={story.custom_excerpt}
-        theme="background"
-        align="center"
-      />
+      <PostHeader data={story} theme="background" align="center" />
 
-      <PostLayout className="mx-auto <md:px-5 text-base text-gray-700 md:text-lg md:leading-loose">
+      <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
         <div
           className="gh-canvas article-body"
           dangerouslySetInnerHTML={{ __html: story.html }}

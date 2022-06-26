@@ -1,56 +1,74 @@
 .postHeader {
-  /* @apply mb-15; */
-  @apply mb-5;
-  /* @apply py-20; */
-  @apply py-5;
-  @apply px-5;
+  @apply bg-gray-100;
+  position: relative;
+  min-height: var(--post-header-height);
 }
 
-.postHeaderBackground {
-  @apply bg-gray-200;
+.postHeader::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .postHeaderInner {
-  @apply mx-auto;
-  max-width: 960px;
+  @apply pt-24;
+  @apply pb-4;
+
+  z-index: 2;
+}
+
+.postHeaderMeta {
+  @apply text-white
+  @apply text-sm;
+  @apply uppercase;
+  @apply font-bold;
+  @apply mb-4;
 }
 
 .postHeaderTitle {
-  @apply font-serif;
-  @apply text-3xl;
-  @apply text-left;
-  @apply leading-snug;
-  @apply mb-5;
+  @apply text-white;
+  @apply font-raleway;
+  @apply font-extrabold;
+  @apply text-5xl;
+  @apply lining-nums;
+  @apply leading-tight;
 }
 
 .postHeaderDescription {
+  @apply text-white;
+  @apply font-raleway;
+  @apply mt-7;
   @apply text-xl;
-  @apply text-gray-600;
+  @apply lining-nums;
 }
 
-@screen md {
-  .postHeader {
-    @apply mb-15;
-    @apply py-20;
-    @apply bg-gray-200;
-  }
-
-  .postHeaderTitle {
-    @apply text-6xl;
-  }
+.postHeaderFeatureImage {
+  grid-column: full-start / full-end;
 }
 
-@screen lg {
-  .postHeader {
-    @apply pb-10;
-  }
+.postHeaderFeatureImage img {
+  width: 100%;
+  height: var(--post-header-height);
+  -o-object-fit: cover;
+  object-fit: cover;
+}
 
-  .postHeaderTitle {
-    text-align: left;
-  }
+.postHeaderFeatureImageFigcaption {
+  @apply text-gray-500;
+  @apply text-base;
+  @apply mt-1;
+  @apply text-center;
 
-  .alignCenter .postHeaderTitle,
-  .alignCenter .postHeaderDescription {
-    text-align: center;
-  }
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  width: 100%;
+
+  /* padding-top: var(--post-header-height) */
 }

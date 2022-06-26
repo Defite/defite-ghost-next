@@ -17,7 +17,7 @@ const BlogIndex: React.FunctionComponent<any> = ({ posts }) => {
           content="https://nikita.codes/share.png"
         />
       </Head>
-      <PostHeader title="Blog" theme="simple" align="center" />
+      {/* <PostHeader title="Blog" theme="simple" align="center" /> */}
       <div className="container mx-auto px-4 sm:px-16">
         <PostList items={posts} />
       </div>
