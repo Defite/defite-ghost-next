@@ -1,13 +1,12 @@
 import PostList from '../components/PostList/PostList'
-import Storyblok, { useStoryblok } from '../lib/storyblok'
 import { api } from '../lib/ghost'
 import DynamicComponent from '../components/DynamicComponent'
 import Head from 'next/dist/shared/lib/head'
+import { Intro } from '../components/Intro'
+import Header from '../components/Header/Header'
 // import Projects from '../components/Projects/Projects'
 
-export default function Home({ posts, story, preview /*, projects*/ }: any) {
-  story = useStoryblok(story, preview)
-
+export default function Home({ posts, page /*, projects*/ }: any) {
   return (
     <main className="container mx-auto">
       <Head>
@@ -18,7 +17,11 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
           content="https://nikita.codes/share.png"
         />
       </Head>
-      <DynamicComponent blok={story.content} />
+
+      {/* <Header /> */}
+
+      <Intro {...page} />
+
       <section id="posts" className="-mt-5 mb-5 h-5 w-5"></section>
       <section className="px-1.5rem lg:px-16">
         <h2 className="text-4xl font-serif mb-2rem">Posts</h2>
@@ -33,18 +36,6 @@ export default function Home({ posts, story, preview /*, projects*/ }: any) {
 }
 
 export async function getStaticProps(context: any) {
-  let params = {
-    version: 'draft', // or 'published'
-    cv: Date.now(),
-  }
-
-  if (context.preview) {
-    params.version = 'draft'
-    params.cv = Date.now()
-  }
-
-  let { data } = await Storyblok.get(`cdn/stories/home`, {})
-
   const postsData = await api.posts
     .browse({
       limit: 'all',
@@ -53,12 +44,19 @@ export async function getStaticProps(context: any) {
 
   const posts = postsData.filter((item: any) => !item.pagination)
 
+  const page = await api.pages
+    .read({
+      slug: 'home',
+    })
+    .catch((err: any) => console.error(err))
+
+  const settings = await api.settings.browse()
+
   return {
     props: {
       posts,
-      story: data ? data.story : false,
-      preview: context.preview || false,
+      page,
+      navigation: settings.navigation,
     },
-    revalidate: 3600, // revalidate every hour
   }
 }

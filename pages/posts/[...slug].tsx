@@ -12,8 +12,6 @@ const Post: React.FunctionComponent<any> = ({ story }) => {
 
   const defaultShareImage = 'https://nikita.codes/share.png'
 
-  console.log('st', story)
-
   return (
     <main className="mb-10 gh-article">
       <Head>
