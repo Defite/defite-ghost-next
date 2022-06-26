@@ -15,12 +15,6 @@ const AboutPage: React.FunctionComponent = () => {
           content="https://nikita.codes/share.png"
         />
       </Head>
-      <PostHeader
-        title="About me"
-        description="A few words about me and this web page"
-        theme="background"
-        align="center"
-      />
       <PostLayout className="prose md:prose-lg mx-auto <md:px-5">
         Hey again! You probably already know who I am?
       </PostLayout>
