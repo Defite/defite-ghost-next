@@ -3,8 +3,9 @@ import PostLayout from '../../layouts/post'
 import { api } from '../../lib/ghost'
 import Head from 'next/head'
 import { IPostItem } from '../../components/PostList/PostList.types'
+import { Header } from '../../components/Header'
 
-const Post: React.FunctionComponent<any> = ({ story }) => {
+const Post: React.FunctionComponent<any> = ({ story, navigation }) => {
   const metaTags = {
     title: story.title || story.meta_title,
     description: story.custom_excerpt || story.meta_description,
@@ -13,30 +14,33 @@ const Post: React.FunctionComponent<any> = ({ story }) => {
   const defaultShareImage = 'https://nikita.codes/share.png'
 
   return (
-    <main className="mb-10 gh-article">
-      <Head>
-        <title>{metaTags.title} – Nikita Codes</title>
-        <meta name="description" content={metaTags.description} />
+    <>
+      <Header items={navigation} />
+      <main className="mb-10 gh-article">
+        <Head>
+          <title>{metaTags.title} – Nikita Codes</title>
+          <meta name="description" content={metaTags.description} />
 
-        <meta
-          property="og:image"
-          content={story.og_image || defaultShareImage}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content={story.twitter_image || defaultShareImage}
-        />
-      </Head>
-      <PostHeader data={story} theme="background" align="center" />
+          <meta
+            property="og:image"
+            content={story.og_image || defaultShareImage}
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:image"
+            content={story.twitter_image || defaultShareImage}
+          />
+        </Head>
+        <PostHeader data={story} theme="background" align="center" />
 
-      <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
-        <div
-          className="gh-canvas article-body"
-          dangerouslySetInnerHTML={{ __html: story.html }}
-        />
-      </PostLayout>
-    </main>
+        <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
+          <div
+            className="gh-canvas article-body"
+            dangerouslySetInnerHTML={{ __html: story.html }}
+          />
+        </PostLayout>
+      </main>
+    </>
   )
 }
 
@@ -65,9 +69,12 @@ export async function getStaticProps({ params }: any) {
     })
     .catch((err: any) => console.error(err))
 
+  const settings = await api.settings.browse()
+
   return {
     props: {
       story: post,
+      navigation: settings.navigation,
     },
   }
 }

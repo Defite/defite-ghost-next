@@ -2,26 +2,30 @@ import PostHeader from '../../components/PostHeader /PostHeader'
 import PostList from '../../components/PostList/PostList'
 import Head from 'next/dist/shared/lib/head'
 import { api } from '../../lib/ghost'
+import { Header } from '../../components/Header'
 
-const BlogIndex: React.FunctionComponent<any> = ({ posts }) => {
+const BlogIndex: React.FunctionComponent<any> = ({ posts, navigation }) => {
   return (
-    <main>
-      <Head>
-        <title>Blog – Nikita Codes</title>
-        <meta name="description" content="List of all my posts" />
+    <>
+      <Header items={navigation} />
+      <main>
+        <Head>
+          <title>Blog – Nikita Codes</title>
+          <meta name="description" content="List of all my posts" />
 
-        <meta property="og:image" content="https://nikita.codes/share.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content="https://nikita.codes/share.png"
-        />
-      </Head>
-      {/* <PostHeader title="Blog" theme="simple" align="center" /> */}
-      <div className="container mx-auto px-4 sm:px-16">
-        <PostList items={posts} />
-      </div>
-    </main>
+          <meta property="og:image" content="https://nikita.codes/share.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:image"
+            content="https://nikita.codes/share.png"
+          />
+        </Head>
+        {/* <PostHeader title="Blog" theme="simple" align="center" /> */}
+        <div className="container mx-auto px-4 sm:px-16">
+          <PostList items={posts} />
+        </div>
+      </main>
+    </>
   )
 }
 
@@ -34,9 +38,12 @@ export async function getStaticProps(context: any) {
 
   const posts = postsData.filter((item: any) => !item.pagination)
 
+  const settings = await api.settings.browse()
+
   return {
     props: {
       posts,
+      navigation: settings.navigation,
     },
   }
 }

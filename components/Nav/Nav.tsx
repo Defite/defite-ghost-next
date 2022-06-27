@@ -1,24 +1,9 @@
 import { FunctionComponent, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import styles from './nav.module.css'
+import { NavProps } from './Nav.types'
 
-interface INav {
-  opened: boolean
-  setOpen: (opened: boolean) => void
-}
-
-const menu = [
-  {
-    title: 'Blog',
-    href: '/posts',
-  },
-  {
-    title: 'About',
-    href: '/about',
-  },
-]
-
-const Nav: FunctionComponent<INav> = ({ opened, setOpen }) => {
+const Nav: FunctionComponent<NavProps> = ({ opened, setOpen, items }) => {
   const navClass = opened
     ? 'duration-200 ease-out opacity-100 transform scale-100 z-10'
     : 'duration-200 ease-in opacity-0 transform scale-95 <md:-z-10'
@@ -56,10 +41,10 @@ const Nav: FunctionComponent<INav> = ({ opened, setOpen }) => {
       className={`${styles.nav} ${navClass} md:opacity-100 md:transform-none`}
     >
       <ul className={styles.navList}>
-        {menu.map((item) => (
-          <li className={styles.navItem} key={`menu-nav-${item.title}`}>
-            <Link href={item.href}>
-              <a onClick={onLinkClick}>{item.title}</a>
+        {items.map((item) => (
+          <li className={styles.navItem} key={`menu-nav-${item.label}`}>
+            <Link href={item.url}>
+              <a onClick={onLinkClick}>{item.label}</a>
             </Link>
           </li>
         ))}
