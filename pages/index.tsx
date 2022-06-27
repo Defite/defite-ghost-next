@@ -5,12 +5,7 @@ import { Intro } from '../components/Intro'
 import { Header } from '../components/Header'
 // import Projects from '../components/Projects/Projects'
 
-export default function Home({
-  posts,
-  page,
-  navigation,
-  settings /*, projects*/,
-}: any) {
+export default function Home({ posts, page, navigation /*, projects*/ }: any) {
   return (
     <>
       <Header items={navigation} />
@@ -62,7 +57,6 @@ export async function getStaticProps(context: any) {
       posts,
       page,
       navigation: settings.navigation,
-      settings,
     },
   }
 }
