@@ -4,6 +4,7 @@ import Head from 'next/dist/shared/lib/head'
 import { api } from '../lib/ghost'
 import { IPostItem } from '../components/PostList/PostList.types'
 import { Header } from '../components/Header'
+import { NavItem } from '../components/Nav/Nav.types'
 
 interface GhostJSTextNode {
   slug: string
@@ -42,6 +43,7 @@ interface GhostJSTextNode {
 
 interface PageProps {
   story: GhostJSTextNode
+  navigation: NavItem[]
 }
 
 const Page: React.FunctionComponent<PageProps> = ({ story, navigation }) => {
