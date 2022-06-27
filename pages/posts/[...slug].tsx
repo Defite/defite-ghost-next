@@ -5,7 +5,11 @@ import Head from 'next/head'
 import { IPostItem } from '../../components/PostList/PostList.types'
 import { Header } from '../../components/Header'
 
-const Post: React.FunctionComponent<any> = ({ story, navigation }) => {
+const Post: React.FunctionComponent<any> = ({
+  story,
+  navigation,
+  settings,
+}) => {
   const metaTags = {
     title: story.title || story.meta_title,
     description: story.custom_excerpt || story.meta_description,
@@ -15,6 +19,12 @@ const Post: React.FunctionComponent<any> = ({ story, navigation }) => {
 
   return (
     <>
+      <style global jsx>{`
+        :root {
+          --ghost-accent-color: ${settings.accent_color};
+        }
+      `}</style>
+
       <Header items={navigation} />
       <main className="mb-10 gh-article">
         <Head>
@@ -75,6 +85,7 @@ export async function getStaticProps({ params }: any) {
     props: {
       story: post,
       navigation: settings.navigation,
+      settings,
     },
   }
 }

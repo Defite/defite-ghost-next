@@ -1,12 +1,16 @@
 import PostList from '../components/PostList/PostList'
 import { api } from '../lib/ghost'
-import DynamicComponent from '../components/DynamicComponent'
 import Head from 'next/dist/shared/lib/head'
 import { Intro } from '../components/Intro'
 import { Header } from '../components/Header'
 // import Projects from '../components/Projects/Projects'
 
-export default function Home({ posts, page, navigation /*, projects*/ }: any) {
+export default function Home({
+  posts,
+  page,
+  navigation,
+  settings /*, projects*/,
+}: any) {
   return (
     <>
       <Header items={navigation} />
@@ -58,6 +62,7 @@ export async function getStaticProps(context: any) {
       posts,
       page,
       navigation: settings.navigation,
+      settings,
     },
   }
 }

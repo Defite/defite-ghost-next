@@ -114,6 +114,15 @@ use it for applying any other styles. */
   color: white;
 }
 
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body h5,
+.article-body h6 {
+  @apply font-bold;
+}
+
 /* Without cover image */
 
 .gh-article.no-image .gh-header {
