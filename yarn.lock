@@ -4702,10 +4702,10 @@ stable@^0.1.8:
   resolved "https://registry.yarnpkg.com/stable/-/stable-0.1.8.tgz#836eb3c8382fe2936feaf544631017ce7d47a3cf"
   integrity sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==
 
-storyblok-js-client@^4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.3.tgz#6aa9547bec522d23a675865b7b119beb5ab82540"
-  integrity sha512-k4lKRYIUHmd33Hm9hQRLkOw6mCQxC+qwQWAYGOqIC0Jr0eSvaXstFtyx+5BZldl3rhvuq9tlRRirDt4QTdxVNQ==
+storyblok-js-client@^4.5.4:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/storyblok-js-client/-/storyblok-js-client-4.5.4.tgz#6d00157965e7285a619a7d0931948f2a4e1b746c"
+  integrity sha512-kOjLI4q5DvMeGUvV8b8sOlrSxCvSSQPCi4etp+44+Te8iI1sx8AxpMcBYtTInHwosO5QvKZZLqjIVd/HJiIrqA==
   dependencies:
     prettier "^2.5.1"
     rollup-plugin-mjs-entry "^0.1.1"
