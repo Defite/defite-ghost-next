@@ -160,3 +160,41 @@ use it for applying any other styles. */
   width: 100%;
   height: 100%;
 }
+
+.article-body > blockquote:not([class]) {
+  position: relative;
+  font-style: italic;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.article-body > blockquote:not([class])::before {
+  content: "";
+  position: absolute;
+  left: -1.5em;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--ghost-accent-color);
+}
+
+.article-body .kg-bookmark-title {
+  @apply text-base;
+}
+
+.article-body .kg-bookmark-description {
+  @apply text-sm;
+}
+
+.article-body .kg-bookmark-metadata {
+  @apply text-sm;
+}
+
+.gh-article .article-body hr {
+  @apply w-full;
+
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #f0f0f0;
+}
