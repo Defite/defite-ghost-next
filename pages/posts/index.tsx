@@ -4,7 +4,11 @@ import Head from 'next/dist/shared/lib/head'
 import { api } from '../../lib/ghost'
 import { Header } from '../../components/Header'
 
-const BlogIndex: React.FunctionComponent<any> = ({ posts, navigation }) => {
+const BlogIndex: React.FunctionComponent<any> = ({
+  story,
+  posts,
+  navigation,
+}) => {
   return (
     <>
       <Header items={navigation} />
@@ -20,7 +24,7 @@ const BlogIndex: React.FunctionComponent<any> = ({ posts, navigation }) => {
             content="https://nikita.codes/share.png"
           />
         </Head>
-        {/* <PostHeader title="Blog" theme="simple" align="center" /> */}
+        <PostHeader data={story} alignCenter isPage />
         <div className="container mx-auto px-4 sm:px-16">
           <PostList items={posts} />
         </div>
@@ -29,7 +33,13 @@ const BlogIndex: React.FunctionComponent<any> = ({ posts, navigation }) => {
   )
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
+  const page = await api.pages
+    .read({
+      slug: 'blog',
+    })
+    .catch((err: any) => console.error(err))
+
   const postsData = await api.posts
     .browse({
       limit: 'all',
@@ -42,6 +52,7 @@ export async function getStaticProps(context: any) {
 
   return {
     props: {
+      story: page,
       posts,
       navigation: settings.navigation,
     },

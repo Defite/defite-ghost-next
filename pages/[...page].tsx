@@ -5,44 +5,10 @@ import { api } from '../lib/ghost'
 import { IPostItem } from '../components/PostList/PostList.types'
 import { Header } from '../components/Header'
 import { NavItem } from '../components/Nav/Nav.types'
-
-interface GhostJSTextNode {
-  slug: string
-  id: string
-  uuid: string
-  title: string
-  html: string
-  comment_id: string
-  feature_image: string | null
-  featured: boolean
-  visibility: string
-  created_at: string
-  updated_at: string
-  published_at: string
-  custom_excerpt: string | null
-  codeinjection_head: string | null
-  codeinjection_foot: string | null
-  custom_template: string | null
-  canonical_url: string | null
-  url: string
-  excerpt: string
-  reading_time: number
-  access: boolean
-  og_image: string | null
-  og_title: string | null
-  og_description: string | null
-  twitter_image: string | null
-  twitter_title: string | null
-  twitter_description: string | null
-  meta_title: string | null
-  meta_description: string | null
-  frontmatter: string | null
-  feature_image_alt: string | null
-  feature_image_caption: string | null
-}
+import { BaseNode } from '../types/base'
 
 interface PageProps {
-  story: GhostJSTextNode
+  story: BaseNode
   navigation: NavItem[]
 }
 
@@ -67,6 +33,8 @@ const Page: React.FunctionComponent<PageProps> = ({ story, navigation }) => {
             content="https://nikita.codes/share.png"
           />
         </Head>
+
+        <PostHeader data={story} isPage />
 
         <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
           <div

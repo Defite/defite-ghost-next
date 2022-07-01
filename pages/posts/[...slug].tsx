@@ -41,7 +41,7 @@ const Post: React.FunctionComponent<any> = ({
             content={story.twitter_image || defaultShareImage}
           />
         </Head>
-        <PostHeader data={story} theme="background" align="center" />
+        <PostHeader data={story} />
 
         <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
           <div

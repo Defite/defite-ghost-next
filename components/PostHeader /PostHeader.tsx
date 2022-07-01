@@ -1,12 +1,13 @@
 import Image from 'next/image'
+import cx from 'classnames'
 
 import * as T from './PostHeader.types'
 import styles from './postheader.module.css'
 
 const PostHeader: React.FunctionComponent<T.IPostHeader> = ({
   data,
-  theme,
-  align,
+  alignCenter,
+  isPage,
 }) => {
   const {
     title,
@@ -16,15 +17,20 @@ const PostHeader: React.FunctionComponent<T.IPostHeader> = ({
     feature_image_alt,
   } = data
 
-  const headerClass = `gh-canvas ${styles.postHeader}`
+  const rootClass = cx('gh-canvas', styles.postHeader, {
+    [styles.postHeaderNoBg]: !feature_image,
+    [styles.postHeaderAlignCenter]: alignCenter,
+  })
 
   return (
-    <div className={headerClass}>
+    <div className={rootClass}>
       <div className={styles.postHeaderInner}>
-        <span className={styles.postHeaderMeta}>
-          <time dateTime="2022-06-06">6 Jun 2022</time>{' '}
-          <span className="bull">•</span> 3 min read
-        </span>
+        {!isPage && (
+          <span className={styles.postHeaderMeta}>
+            <time dateTime="2022-06-06">6 Jun 2022</time>{' '}
+            <span className="bull">•</span> 3 min read
+          </span>
+        )}
         <h1 className={styles.postHeaderTitle}>{title}</h1>
         <p className={styles.postHeaderDescription}>{custom_excerpt}</p>
       </div>

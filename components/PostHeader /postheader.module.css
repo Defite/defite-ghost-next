@@ -1,10 +1,19 @@
 .postHeader {
-  @apply bg-gray-100;
+  /* @apply bg-gray-100; */
   position: relative;
   min-height: var(--post-header-height);
 }
 
-.postHeader::before {
+.postHeader.postHeaderNoBg {
+  min-height: 100px;
+}
+
+.postHeader.postHeaderAlignCenter > div {
+  grid-column: wide-start/wide-end;
+  text-align: center;
+}
+
+.postHeader.not(.postHeaderNoBg)::before {
   content: "";
   display: block;
   width: 100%;
@@ -46,6 +55,12 @@
   @apply mt-7;
   @apply text-xl;
   @apply lining-nums;
+}
+
+.postHeaderNoBg .postHeaderMeta,
+.postHeaderNoBg .postHeaderTitle,
+.postHeaderNoBg .postHeaderDescription {
+  @apply text-gray-800;
 }
 
 .postHeaderFeatureImage {
