@@ -8,12 +8,16 @@
   min-height: 100px;
 }
 
+.postHeader.postHeaderNoBg::before {
+  content: none;
+}
+
 .postHeader.postHeaderAlignCenter > div {
   grid-column: wide-start/wide-end;
   text-align: center;
 }
 
-.postHeader.not(.postHeaderNoBg)::before {
+.postHeader::before {
   content: "";
   display: block;
   width: 100%;
