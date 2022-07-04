@@ -4,6 +4,7 @@ import { api } from '../../lib/ghost'
 import Head from 'next/head'
 import { IPostItem } from '../../components/PostList/PostList.types'
 import { Header } from '../../components/Header'
+import { useEffect } from 'react'
 
 const Post: React.FunctionComponent<any> = ({
   story,
@@ -16,6 +17,17 @@ const Post: React.FunctionComponent<any> = ({
   }
 
   const defaultShareImage = 'https://nikita.codes/share.png'
+
+  useEffect(() => {
+    const highlight = async () => {
+      const Prism = await import('prismjs')
+      await import('prismjs/plugins/toolbar/prism-toolbar')
+      await import('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard')
+      Prism.highlightAll()
+    }
+
+    highlight()
+  })
 
   return (
     <>

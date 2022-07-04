@@ -198,3 +198,13 @@ use it for applying any other styles. */
   border: 0;
   border-top: 1px solid #f0f0f0;
 }
+
+/* Prism */
+
+button[data-copy-state="copy"] {
+  color: black;
+}
+
+button[data-copy-state="copy-success"] {
+  color: green;
+}
