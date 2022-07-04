@@ -21,7 +21,10 @@ const Post: React.FunctionComponent<any> = ({
   useEffect(() => {
     const highlight = async () => {
       const Prism = await import('prismjs')
+
+      // @ts-ignore
       await import('prismjs/plugins/toolbar/prism-toolbar')
+      // @ts-ignore
       await import('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard')
       Prism.highlightAll()
     }
