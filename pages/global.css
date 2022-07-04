@@ -200,11 +200,34 @@ use it for applying any other styles. */
 }
 
 /* Prism */
-
-button[data-copy-state="copy"] {
-  color: black;
+.code-toolbar {
+  position: relative;
 }
 
-button[data-copy-state="copy-success"] {
-  color: green;
+button.copy-to-clipboard-button {
+  font-size: 0;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  width: 24px;
+  height: 24px;
+}
+
+button.copy-to-clipboard-button:hover {
+  @apply bg-white;
+}
+
+button[data-copy-state="copy"] {
+  @apply bg-white/40;
+  mask-image: url('/copy.svg');
+  mask-repeat: no-repeat;
+  mask-position: 100% 100%;
+}
+
+button[data-copy-state="copy-success"],
+button[data-copy-state="copy-success"]:hover {
+  @apply bg-green-400;
+  mask-image: url('/copy-success.svg');
+  mask-repeat: no-repeat;
+  mask-position: 100% 100%;
 }
