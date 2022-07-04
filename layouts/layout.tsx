@@ -12,7 +12,7 @@ interface LayoutProps {
 const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
   useEffect(() => {
     Prism.highlightAll()
-  }, [])
+  })
 
   return (
     <>
