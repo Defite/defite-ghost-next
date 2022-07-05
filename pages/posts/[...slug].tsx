@@ -18,6 +18,19 @@ const Post: React.FunctionComponent<any> = ({
 
   const defaultShareImage = 'https://nikita.codes/share.png'
 
+  const handleToggleClick = (
+    event: Event & {
+      target: HTMLDivElement
+    }
+  ) => {
+    if (event.target.className === 'kg-toggle-heading') {
+      const parent = event.target.parentElement
+      parent?.getAttribute('data-kg-toggle-state') === 'close'
+        ? parent.setAttribute('data-kg-toggle-state', 'open')
+        : parent?.setAttribute('data-kg-toggle-state', 'close')
+    }
+  }
+
   useEffect(() => {
     const highlight = async () => {
       const Prism = await import('prismjs')
@@ -31,6 +44,14 @@ const Post: React.FunctionComponent<any> = ({
 
     highlight()
   })
+
+  useEffect(() => {
+    document.addEventListener('click', handleToggleClick)
+
+    return () => {
+      document.removeEventListener('click', handleToggleClick)
+    }
+  }, [handleToggleClick])
 
   return (
     <>
