@@ -18,11 +18,7 @@ const Post: React.FunctionComponent<any> = ({
 
   const defaultShareImage = 'https://nikita.codes/share.png'
 
-  const handleToggleClick = (
-    event: Event & {
-      target: HTMLDivElement
-    }
-  ) => {
+  const handleToggleClick = (event: any) => {
     if (event.target.className === 'kg-toggle-heading') {
       const parent = event.target.parentElement
       parent?.getAttribute('data-kg-toggle-state') === 'close'
