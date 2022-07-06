@@ -19,12 +19,11 @@ const Post: React.FunctionComponent<any> = ({
   const defaultShareImage = 'https://nikita.codes/share.png'
 
   const handleToggleClick = (event: any) => {
-    if (event.target.className === 'kg-toggle-heading') {
-      const parent = event.target.parentElement
-      parent?.getAttribute('data-kg-toggle-state') === 'close'
-        ? parent.setAttribute('data-kg-toggle-state', 'open')
-        : parent?.setAttribute('data-kg-toggle-state', 'close')
-    }
+    const parent = event.target.closest('.kg-toggle-card')
+
+    parent?.getAttribute('data-kg-toggle-state') === 'close'
+      ? parent.setAttribute('data-kg-toggle-state', 'open')
+      : parent?.setAttribute('data-kg-toggle-state', 'close')
   }
 
   useEffect(() => {
@@ -42,10 +41,11 @@ const Post: React.FunctionComponent<any> = ({
   })
 
   useEffect(() => {
-    document.addEventListener('click', handleToggleClick)
+    const content = document.querySelector('.article-body')
+    content?.addEventListener('click', handleToggleClick)
 
     return () => {
-      document.removeEventListener('click', handleToggleClick)
+      content?.removeEventListener('click', handleToggleClick)
     }
   }, [handleToggleClick])
 
