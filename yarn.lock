@@ -4717,10 +4717,10 @@ storyblok-react@^0.1.2:
   resolved "https://registry.yarnpkg.com/storyblok-react/-/storyblok-react-0.1.2.tgz#798672e1111cec68dc487985b1fbba15129fc90d"
   integrity sha512-68KtSgkAT/0XZ9diz3wfoPl6xOt3WJmCv03qZOZUNPs1uDFh1FHF7P9OHt6TfMcxPrv3ldjTypkQXbFdT7JnvA==
 
-storyblok-rich-text-react-renderer-ts@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer-ts/-/storyblok-rich-text-react-renderer-ts-3.1.3.tgz#338a5161f87be520177005419ce8b7cce06b059f"
-  integrity sha512-++0xGoQSi2MO4WxxqofKl0lFUeoEmRDhjNmKK2nbBH32Stsdmelo28QjL1cXxcNsRUo8sZS0UnMjVHnofryE9Q==
+storyblok-rich-text-react-renderer-ts@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/storyblok-rich-text-react-renderer-ts/-/storyblok-rich-text-react-renderer-ts-3.2.0.tgz#233e5ed091a220cdb8c501e88879be5109b52ad0"
+  integrity sha512-x3YvfpAWYLMLgqLBeFB6LOBSTHfjy+aV3SM74LOhqACJ8xXHbzLiqXuv0+ZaIRKWIPXuuWEkwVfW331m4EO4aA==
   dependencies:
     "@marvr/storyblok-rich-text-types" "^2.0.1"
 
