@@ -9,24 +9,19 @@
     "lint": "prettier --write \"{components,layouts,lib,pages}/**/*.{js,tsx}\" && next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "next",
-    "@mdx-js/runtime": "next",
-    "@next/mdx": "^12.2.2",
     "@svgr/webpack": "^6.2.1",
-    "axios": "^0.27.2",
-    "gray-matter": "^4.0.3",
-    "lodash": "^4.17.21",
+    "@tryghost/content-api": "^1.11.0",
+    "classnames": "^2.3.1",
     "next": "12.2.2",
+    "prismjs": "^1.28.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.30.7",
-    "storyblok-js-client": "^4.5.6",
-    "storyblok-react": "^0.1.2",
-    "storyblok-rich-text-react-renderer-ts": "^3.2.0",
     "windicss-webpack-plugin": "^1.7.4"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
+    "@types/prismjs": "^1.26.0",
     "@types/react": "18.0.15",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.2",

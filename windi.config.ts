@@ -8,14 +8,13 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Merriweather', 'serif']
+        serif: ['Merriweather', 'serif'],
+        raleway: ['Raleway', 'sans-serif'],
       },
       screens: {
-        'xsm': { min: '425px'},
+        xsm: { min: '425px' },
       },
-    }
+    },
   },
-  plugins: [
-    require('windicss/plugin/typography'),
-  ]
+  plugins: [require('windicss/plugin/typography')],
 })

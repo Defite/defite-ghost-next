@@ -1,7 +1,6 @@
 const WindiCSS = require('windicss-webpack-plugin')
-const withMDX = require('@next/mdx')()
 
-module.exports = withMDX({
+module.exports = {
   webpack(config, { isServer }) {
     // Fixes npm packages (mdx) that depend on `fs` module
     if (!isServer) {
@@ -18,6 +17,12 @@ module.exports = withMDX({
     return config
   },
   images: {
-    domains: ['a.storyblok.com'],
+    domains: [
+      'a.storyblok.com',
+      'images.unsplash.com',
+      'localhost',
+      'static.ghost.org',
+      '933413-defite.tmweb.ru',
+    ],
   },
-})
+}

@@ -1,7 +1,6 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
-
 interface LayoutProps {
   children: React.ReactNode
 }
@@ -17,7 +16,6 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       {children}
       <Footer />
     </>

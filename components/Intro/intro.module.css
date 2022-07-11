@@ -6,7 +6,11 @@
   flex-flow: row wrap;
 }
 
-.introTitle {
+.text {
+  width: 100%;
+}
+
+.text > h1 {
   @apply text-2rem;
   @apply font-serif;
   @apply font-bold;
@@ -38,7 +42,7 @@
   top: 0;
 }
 
-.introSub {
+.text > h2 {
   @apply text-2xl;
   @apply tracking-wider;
   @apply leading-relaxed;
@@ -78,21 +82,21 @@ a.introButton::after {
 }
 
 @screen xsm {
-  .introTitle {
+  .text > h1 {
     @apply text-2.5rem;
     @apply leading-tight;
   }
 }
 
 @screen sm {
-  .introTitle {
+  .text > h1 {
     @apply text-3.5rem;
     @apply leading-tight;
   }
 }
 
 @screen md {
-  .introTitle {
+  .text > h1 {
     @apply text-4rem;
 
     line-height: 1.1;
@@ -104,7 +108,7 @@ a.introButton::after {
 }
 
 @screen lg {
-  .introTitle {
+  .text > h1 {
     @apply text-5.5rem;
   }
 

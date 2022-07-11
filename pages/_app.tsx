@@ -1,5 +1,7 @@
 import './global.css'
+import './cards.min.css'
 import 'windi.css'
+import 'prismjs/themes/prism-okaidia.css'
 import type { AppProps } from 'next/app'
 import Layout from '../layouts/layout'
 

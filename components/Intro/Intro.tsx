@@ -1,16 +1,19 @@
 import styles from './intro.module.css'
-import { render } from 'storyblok-rich-text-react-renderer-ts'
 
-const Intro: React.FunctionComponent<any> = ({ blok }) => {
+const Intro: React.FunctionComponent<any> = (props) => {
+  const { html } = props
+
   return (
     <section className={styles.intro}>
-      <h1 className={styles.introTitle}>
-        {render(blok.title)}
-        {/* I&apos;m Nikita Makhov. <br /> I make modern websites. */}
-      </h1>
-      <h3 className={styles.introSub}>
-        {render(blok.description)}
-        {/* I&apos;m front-end developer in{' '}
+      <div
+        className={styles.text}
+        dangerouslySetInnerHTML={{ __html: html }}
+      ></div>
+      {/* <h1 className={styles.introTitle}> */}
+      {/* I&apos;m Nikita Makhov. <br /> I make modern websites. */}
+      {/* </h1>
+      <h3 className={styles.introSub}> */}
+      {/* I&apos;m front-end developer in{' '}
         <a className={styles.link} href="https://mail.ru">
           Mail.ru
         </a>
@@ -20,7 +23,7 @@ const Intro: React.FunctionComponent<any> = ({ blok }) => {
         </a>
         , <i>magazine about web development.</i> You can catch me running or
         driving Volvo. */}
-      </h3>
+      {/* </h3> */}
 
       <a href="#posts" className={styles.introButton}>
         <span>Let&apos;s roll</span>

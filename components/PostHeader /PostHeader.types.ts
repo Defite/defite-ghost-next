@@ -1,6 +1,6 @@
+import { Post } from '../../types/post'
 export interface IPostHeader {
-  title: string
-  description?: any
-  theme: 'simple' | 'background'
-  align?: 'center'
+  data: Post
+  alignCenter?: boolean
+  isPage?: boolean
 }

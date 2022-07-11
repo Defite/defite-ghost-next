@@ -1,81 +1,101 @@
-import Storyblok, { useStoryblok } from '../../lib/storyblok'
 import PostHeader from '../../components/PostHeader /PostHeader'
-import { render } from 'storyblok-rich-text-react-renderer-ts'
 import PostLayout from '../../layouts/post'
-import PostImage from '../../components/PostImage/PostImage'
+import { api } from '../../lib/ghost'
 import Head from 'next/head'
+import { IPostItem } from '../../components/PostList/PostList.types'
+import { Header } from '../../components/Header'
+import { useEffect } from 'react'
 
-const Post: React.FunctionComponent<any> = ({ story, preview }) => {
-  story = useStoryblok(story, preview)
-
-  const { metadata } = story.content
-  const metaTags = metadata || {
-    title: story.content.title,
-    description: '',
+const Post: React.FunctionComponent<any> = ({
+  story,
+  navigation,
+  settings,
+}) => {
+  const metaTags = {
+    title: story.title || story.meta_title,
+    description: story.custom_excerpt || story.meta_description,
   }
 
   const defaultShareImage = 'https://nikita.codes/share.png'
 
+  const handleToggleClick = (event: any) => {
+    const parent = event.target.closest('.kg-toggle-card')
+
+    parent?.getAttribute('data-kg-toggle-state') === 'close'
+      ? parent.setAttribute('data-kg-toggle-state', 'open')
+      : parent?.setAttribute('data-kg-toggle-state', 'close')
+  }
+
+  useEffect(() => {
+    const highlight = async () => {
+      const Prism = await import('prismjs')
+
+      // @ts-ignore
+      await import('prismjs/plugins/toolbar/prism-toolbar')
+      // @ts-ignore
+      await import('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard')
+      Prism.highlightAll()
+    }
+
+    highlight()
+  })
+
+  useEffect(() => {
+    const content = document.querySelector('.article-body')
+    content?.addEventListener('click', handleToggleClick)
+
+    return () => {
+      content?.removeEventListener('click', handleToggleClick)
+    }
+  }, [handleToggleClick])
+
   return (
-    <main className="mb-10">
-      <Head>
-        <title>{metaTags.title} – Nikita Codes</title>
-        <meta name="description" content={metaTags.description} />
+    <>
+      <style global jsx>{`
+        :root {
+          --ghost-accent-color: ${settings.accent_color};
+        }
+      `}</style>
 
-        <meta
-          property="og:image"
-          content={(metadata && metadata.og_image) || defaultShareImage}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:image"
-          content={(metadata && metadata.twitter_image) || defaultShareImage}
-        />
-      </Head>
-      <PostHeader
-        title={story.content.title}
-        description={render(story.content.description)}
-        theme="background"
-        align="center"
-      />
+      <Header items={navigation} />
+      <main className="mb-10 gh-article">
+        <Head>
+          <title>{metaTags.title} – Nikita Codes</title>
+          <meta name="description" content={metaTags.description} />
 
-      <PostLayout className="prose md:prose-lg mx-auto <md:px-5">
-        {render(story.content.long_text, {
-          blokResolvers: {
-            // eslint-disable-next-line react/display-name
-            ['NextPicture']: (props) => (
-              <PostImage
-                src={props.image.filename}
-                title={props.title}
-                caption={props.image.name}
-              />
-            ),
-            ['youtube']: (props) => {
-              return <div dangerouslySetInnerHTML={{ __html: props.video }} />
-            },
-          },
-        })}
-      </PostLayout>
-    </main>
+          <meta
+            property="og:image"
+            content={story.og_image || defaultShareImage}
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            property="twitter:image"
+            content={story.twitter_image || defaultShareImage}
+          />
+        </Head>
+        <PostHeader data={story} />
+
+        <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
+          <div
+            className="gh-canvas article-body"
+            dangerouslySetInnerHTML={{ __html: story.html }}
+          />
+        </PostLayout>
+      </main>
+    </>
   )
 }
 
 export async function getStaticPaths() {
-  let { data } = await Storyblok.get('cdn/links/', {
-    starts_with: 'posts',
-  })
+  const postsData = await api.posts
+    .browse({
+      limit: 'all',
+    })
+    .catch((err: any) => console.error(err))
 
-  let paths: any = []
-  Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
-      return
-    }
+  const posts = postsData.filter((item: any) => !item.pagination)
 
-    // get array for slug because of catch all
-    const slug = data.links[linkKey].slug
-
-    paths.push('/' + slug)
-  })
+  const paths = posts.map((item: IPostItem) => `/posts/${item.slug}`)
 
   return {
     paths,
@@ -84,28 +104,21 @@ export async function getStaticPaths() {
 }
 
 /* TODO: fix this any! */
-export async function getStaticProps({ params, preview = false }: any) {
-  let sbParams = {
-    version: 'draft', // or published
-    cv: Date.now(),
-  }
+export async function getStaticProps({ params }: any) {
+  const post = await api.posts
+    .read({
+      slug: params.slug,
+    })
+    .catch((err: any) => console.error(err))
 
-  if (preview) {
-    sbParams.version = 'draft'
-    sbParams.cv = Date.now()
-  }
-
-  let { data } = await Storyblok.get(
-    `cdn/stories/posts/${params.slug}`,
-    sbParams
-  )
+  const settings = await api.settings.browse()
 
   return {
     props: {
-      story: data ? data.story : null,
-      preview,
+      story: post,
+      navigation: settings.navigation,
+      settings,
     },
-    revalidate: 3600,
   }
 }
 

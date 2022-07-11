@@ -1,21 +1,8 @@
-export interface IStoryblokCover {
-  id: number
-  alt: string
-  name: string
-  focus: null
-  title: string
-  filename: string
-  copyright: string
-  fieldtype: 'asset'
-}
-
 export interface IPostItem {
-  content: {
-    title: string
-    description?: any
-    cover: IStoryblokCover
-  }
-  full_slug: string
+  title: string
+  custom_excerpt: string
+  feature_image: string
+  slug: string
 }
 
 export interface IPostList {
