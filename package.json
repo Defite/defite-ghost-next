@@ -9,7 +9,7 @@
     "lint": "prettier --write \"{components,layouts,lib,pages}/**/*.{js,tsx}\" && next lint"
   },
   "dependencies": {
-    "@svgr/webpack": "^6.3.0",
+    "@svgr/webpack": "^6.3.1",
     "@tryghost/content-api": "^1.11.0",
     "classnames": "^2.3.1",
     "next": "12.2.3",
