@@ -29,10 +29,15 @@
 }
 
 .postHeaderInner {
-  @apply pt-8;
+  @apply pt-24;
   @apply pb-4;
 
   z-index: 2;
+}
+
+.postHeader.postHeaderNoBg .postHeaderInner {
+  @apply pt-8;
+  @apply pb-4;
 }
 
 .postHeaderMeta {
