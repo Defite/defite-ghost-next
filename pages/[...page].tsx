@@ -36,7 +36,7 @@ const Page: React.FunctionComponent<PageProps> = ({ story, navigation }) => {
 
         <PostHeader data={story} isPage />
 
-        <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose mt-14">
+        <PostLayout className="mx-auto text-lg text-gray-700 leading-9 md:leading-loose">
           <div
             className="gh-canvas article-body"
             dangerouslySetInnerHTML={{ __html: story.html }}

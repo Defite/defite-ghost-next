@@ -1,5 +1,4 @@
 .postHeader {
-  /* @apply bg-gray-100; */
   position: relative;
   min-height: var(--post-header-height);
 }
@@ -30,7 +29,7 @@
 }
 
 .postHeaderInner {
-  @apply pt-24;
+  @apply pt-8;
   @apply pb-4;
 
   z-index: 2;
