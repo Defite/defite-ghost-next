@@ -3,6 +3,7 @@ import cx from 'classnames'
 
 import * as T from './PostHeader.types'
 import styles from './postheader.module.css'
+import { usePostMeta } from './PostHeader.utils'
 
 const PostHeader: React.FunctionComponent<T.IPostHeader> = ({
   data,
@@ -17,6 +18,8 @@ const PostHeader: React.FunctionComponent<T.IPostHeader> = ({
     feature_image_alt,
   } = data
 
+  const { date, reading_time, dateTime } = usePostMeta(data)
+
   const rootClass = cx('gh-canvas', styles.postHeader, {
     [styles.postHeaderNoBg]: !feature_image,
     [styles.postHeaderAlignCenter]: alignCenter,
@@ -27,8 +30,8 @@ const PostHeader: React.FunctionComponent<T.IPostHeader> = ({
       <div className={styles.postHeaderInner}>
         {!isPage && (
           <span className={styles.postHeaderMeta}>
-            <time dateTime="2022-06-06">6 Jun 2022</time>{' '}
-            <span className="bull">•</span> 3 min read
+            <time dateTime={dateTime}>{date}</time>{' '}
+            <span className="bull">•</span> {reading_time} min read
           </span>
         )}
         <h1 className={styles.postHeaderTitle}>{title}</h1>
