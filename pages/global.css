@@ -231,3 +231,13 @@ button[data-copy-state="copy-success"]:hover {
   mask-repeat: no-repeat;
   mask-position: 100% 100%;
 }
+
+.privacy-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  z-index: 2;
+}
