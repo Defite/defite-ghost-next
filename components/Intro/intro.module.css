@@ -16,10 +16,7 @@
   @apply font-bold;
   @apply leading-snug;
 
-  /* line-height: 1.1; */
   margin-bottom: 2.75rem;
-
-  animation: reveal .8s cubic-bezier(.215,.61,.355,1) .25s backwards;
 }
 
 .intro :global(a) {
@@ -51,8 +48,6 @@
   @apply mb-15;
 
   font-weight: 300;
-
-  animation: reveal .8s cubic-bezier(.215,.61,.355,1) .75s backwards;
 }
 
 .introButton {
@@ -69,8 +64,6 @@
 
   cursor: pointer;
   display: none;
-
-  animation: reveal .8s cubic-bezier(.215,.61,.355,1) 1.25s backwards;
 }
 
 a.introButton::after {
@@ -106,10 +99,18 @@ a.introButton::after {
     @apply text-4rem;
 
     line-height: 1.1;
+
+    animation: reveal .8s cubic-bezier(.215,.61,.355,1) .25s backwards;
+  }
+
+  .text > h2 {
+    animation: reveal .8s cubic-bezier(.215,.61,.355,1) .75s backwards;
   }
 
   .introButton {
     display: block;
+
+    animation: reveal .8s cubic-bezier(.215,.61,.355,1) 1.25s backwards;
   }
 }
 
