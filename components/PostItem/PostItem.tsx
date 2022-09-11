@@ -5,10 +5,8 @@ import styles from './postitem.module.css'
 
 const PostItem: React.FunctionComponent<T.IPostItem> = ({
   title,
-  // date,
   description,
   href,
-  isFeatured,
   cover,
 }) => {
   /**
@@ -19,7 +17,16 @@ const PostItem: React.FunctionComponent<T.IPostItem> = ({
       return null
     }
 
-    return <Image src={cover} layout="fill" alt="" objectFit="cover" />
+    return (
+      <Image
+        src={cover}
+        layout="fill"
+        alt=""
+        objectFit="cover"
+        sizes="33vw"
+        quality={80}
+      />
+    )
   }
 
   return (
