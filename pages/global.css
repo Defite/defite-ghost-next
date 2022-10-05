@@ -84,6 +84,16 @@ use it for applying any other styles. */
   @apply mt-6;
 }
 
+.article-body p > code {
+  font: inherit;
+  background-color: #F5F5F5;
+  color: #7F7F7F;
+  padding: 6px;
+  border-radius: 5px;
+  display: inline-block;
+  line-height: 1;
+}
+
 /*
 * Post
 */
