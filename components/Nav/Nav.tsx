@@ -43,8 +43,8 @@ const Nav: FunctionComponent<NavProps> = ({ opened, setOpen, items }) => {
       <ul className={styles.navList}>
         {items.map((item) => (
           <li className={styles.navItem} key={`menu-nav-${item.label}`}>
-            <Link href={item.url}>
-              <a onClick={onLinkClick}>{item.label}</a>
+            <Link href={item.url} onClick={onLinkClick}>
+              {item.label}
             </Link>
           </li>
         ))}

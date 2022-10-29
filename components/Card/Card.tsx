@@ -19,16 +19,7 @@ const Card: React.FunctionComponent<ICardProps> = ({
       return null
     }
 
-    return (
-      <Image
-        src={cover}
-        layout="fill"
-        objectFit="cover"
-        quality={100}
-        objectPosition="top"
-        alt={description}
-      />
-    )
+    return <Image src={cover} quality={100} alt={description} fill />
   }
 
   return (

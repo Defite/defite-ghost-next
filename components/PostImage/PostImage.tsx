@@ -15,9 +15,8 @@ const PostImage: FunctionComponent<IPostImage> = ({ src, title, caption }) => {
       <div className={styles.postImage}>
         <Image
           src={src}
-          layout="responsive"
-          width={width}
-          height={height}
+          width={parseInt(width, 10)}
+          height={parseInt(height, 10)}
           alt={title}
         />
       </div>

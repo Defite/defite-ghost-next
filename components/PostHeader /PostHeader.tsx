@@ -40,11 +40,7 @@ const PostHeader: React.FunctionComponent<T.IPostHeader> = ({
 
       {feature_image && (
         <figure className={styles.postHeaderFeatureImage}>
-          <Image
-            src={feature_image}
-            alt={feature_image_alt || ''}
-            layout="fill"
-          />
+          <Image src={feature_image} alt={feature_image_alt || ''} fill />
           <figcaption className={styles.postHeaderFeatureImageFigcaption}>
             {feature_image_caption && (
               <div

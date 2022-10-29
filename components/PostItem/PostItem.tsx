@@ -19,12 +19,12 @@ const PostItem: React.FunctionComponent<T.IPostItem> = ({
 
     return (
       <Image
+        className={styles.image}
         src={cover}
-        layout="fill"
         alt=""
-        objectFit="cover"
         sizes="33vw"
         quality={80}
+        fill
       />
     )
   }
@@ -35,9 +35,7 @@ const PostItem: React.FunctionComponent<T.IPostItem> = ({
       <div className={styles.postItemInner}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.description}>{description}</div>
-        <Link href={href} scroll={false}>
-          <a className={styles.link}></a>
-        </Link>
+        <Link href={href} scroll={false} className={styles.link} />
       </div>
     </article>
   )

@@ -71,3 +71,7 @@
 .date {
   @apply text-gray-400;
 }
+
+.image {
+  object-fit: cover;
+}
