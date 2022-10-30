@@ -35,7 +35,7 @@ const PostItem: React.FunctionComponent<T.IPostItem> = ({
       <div className={styles.postItemInner}>
         <h2 className={styles.title}>{title}</h2>
         <div className={styles.description}>{description}</div>
-        <Link href={href} scroll={false} className={styles.link} />
+        <Link href={href} className={styles.link} />
       </div>
     </article>
   )
