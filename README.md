@@ -4,7 +4,19 @@ This is a personal site project bootstrapped with [`create-next-app`](https://gi
 
 ## Getting Started
 
-First, run the development server:
+1) Install dependencies:
+
+```bash
+yarn
+# or
+npm i
+```
+
+2) Open your Ghost installation, go to Integrations, create new called API (for example) and copy-paste keys to `.env` file
+
+3) Create new page with `home` alias, it's important, because I've hardcoded this for the main page data %)
+
+3) Run the development server:
 
 ```bash
 npm run dev
