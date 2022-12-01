@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@svgr/webpack": "^6.5.1",
-    "@tryghost/content-api": "^1.11.4",
+    "@tryghost/content-api": "^1.11.5",
     "classnames": "^2.3.2",
     "next": "13.0.5",
     "prismjs": "^1.29.0",
