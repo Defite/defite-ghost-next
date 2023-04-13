@@ -1499,10 +1499,10 @@
   dependencies:
     tslib "^2.4.0"
 
-"@tryghost/content-api@^1.11.6":
-  version "1.11.6"
-  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.11.6.tgz#a6a9fa2215ef657b320339bdb43907424c14deda"
-  integrity sha512-4AWLA9EBIcU6MHNo30OMMN4p2TwokT+feqZDVtXo+ok4J4mUHz0aCjrwcMc8HbrFzANoBQwF+WYsTXYMYgBBtw==
+"@tryghost/content-api@^1.11.8":
+  version "1.11.8"
+  resolved "https://registry.yarnpkg.com/@tryghost/content-api/-/content-api-1.11.8.tgz#27a27c05f9f04546a3a5f905863ff0c5211c1807"
+  integrity sha512-vL2S+NIfdnE0R0XFNBJAPNBeYs2lGbgvlc/BhdkctpHAvZ4sJWudDCjXBC8/tHP6X71oas5IVpJxUV2KbRiI7Q==
   dependencies:
     axios "^0.27.0"
 
