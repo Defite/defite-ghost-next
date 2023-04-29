@@ -6,6 +6,7 @@ import type { AppProps } from 'next/app'
 import Layout from '../layouts/layout'
 import React from 'react'
 import { useRouter } from 'next/router'
+import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -27,9 +28,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router])
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      <Analytics />
+    </>
   )
 }
 export default MyApp
