@@ -1,13 +1,6 @@
 import Image from 'next/image'
 import styles from './card.module.css'
 
-interface ICardProps {
-  title: string
-  description: string
-  cover?: string
-  className?: string
-}
-
 const Card: React.FunctionComponent<ICardProps> = ({
   className,
   title,

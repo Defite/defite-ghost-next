@@ -1,5 +1,9 @@
-import { ICard } from '../Card/Card.types';
+import { ICardProps } from '../Card/Card.types'
+
+interface Project extends ICardProps {
+  url: string
+}
 
 export interface IProjects {
-    projects: ICard[]
+  projects: Project[]
 }

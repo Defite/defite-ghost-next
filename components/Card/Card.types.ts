@@ -1,6 +1,6 @@
-export interface ICard {
-    title: string;
-    description: string;
-    url: string;
-    cover?: string;
+export interface ICardProps {
+  title: string
+  description: string
+  cover?: string
+  className?: string
 }
