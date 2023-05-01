@@ -1,7 +1,6 @@
 export interface IPostItem {
   title: string
-  description?: any
-  // date: string
+  description?: string
   href: string
   isFeatured?: boolean
   cover?: string

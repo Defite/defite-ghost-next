@@ -3,9 +3,27 @@ import { api } from '../lib/ghost'
 import Head from 'next/dist/shared/lib/head'
 import { Intro } from '../components/Intro'
 import { Header } from '../components/Header'
+import { IPostItem } from '../components/PostList/PostList.types'
+import { NavItem } from '../components/Nav/Nav.types'
 // import Projects from '../components/Projects/Projects'
 
-export default function Home({ posts, page, navigation /*, projects*/ }: any) {
+interface PostsDataItem {
+  pagination?: Record<string, number | null>
+}
+
+interface HomePageProps {
+  posts: IPostItem[]
+  page: {
+    html: string
+  }
+  navigation: NavItem[]
+}
+
+export default function Home({
+  posts,
+  page,
+  navigation /*, projects*/,
+}: HomePageProps) {
   return (
     <>
       <Header items={navigation} />
@@ -35,20 +53,20 @@ export default function Home({ posts, page, navigation /*, projects*/ }: any) {
   )
 }
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
   const postsData = await api.posts
     .browse({
       limit: 'all',
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
-  const posts = postsData.filter((item: any) => !item.pagination)
+  const posts = postsData.filter((item: PostsDataItem) => !item.pagination)
 
   const page = await api.pages
     .read({
       slug: 'home',
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
   const settings = await api.settings.browse()
 

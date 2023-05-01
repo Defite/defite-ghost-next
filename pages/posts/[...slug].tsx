@@ -5,8 +5,28 @@ import Head from 'next/head'
 import { IPostItem } from '../../components/PostList/PostList.types'
 import { Header } from '../../components/Header'
 import { useEffect } from 'react'
+import { Post } from '../../types/post'
+import { NavItem } from '../../components/Nav/Nav.types'
 
-const Post: React.FunctionComponent<any> = ({
+interface PostProps {
+  story: Post
+  navigation: NavItem[]
+  settings: {
+    accent_color: string
+  }
+}
+
+interface GetStaticPropsParams {
+  params: {
+    slug: string
+  }
+}
+
+interface PostItem {
+  pagination?: Record<string, number | null>
+}
+
+const Post: React.FunctionComponent<PostProps> = ({
   story,
   navigation,
   settings,
@@ -22,8 +42,11 @@ const Post: React.FunctionComponent<any> = ({
     const highlight = async () => {
       const Prism = await import('prismjs')
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await import('prismjs/plugins/toolbar/prism-toolbar')
+
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await import('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard')
       Prism.highlightAll()
@@ -31,22 +54,6 @@ const Post: React.FunctionComponent<any> = ({
 
     highlight()
   })
-
-  useEffect(() => {
-    const handleToggleClick = (event: any) => {
-      const parent = event.target.closest('.kg-toggle-card')
-
-      parent?.getAttribute('data-kg-toggle-state') === 'close'
-        ? parent.setAttribute('data-kg-toggle-state', 'open')
-        : parent?.setAttribute('data-kg-toggle-state', 'close')
-    }
-    const content = document.querySelector('.article-body')
-    content?.addEventListener('click', handleToggleClick)
-
-    return () => {
-      content?.removeEventListener('click', handleToggleClick)
-    }
-  }, [])
 
   return (
     <>
@@ -60,7 +67,10 @@ const Post: React.FunctionComponent<any> = ({
       <main className="mb-10 gh-article">
         <Head>
           <title>{metaTags.title} – Nikita Codes</title>
-          <meta name="description" content={metaTags.description} />
+          <meta
+            name="description"
+            content={metaTags.description || undefined}
+          />
 
           <meta
             property="og:image"
@@ -90,9 +100,9 @@ export async function getStaticPaths() {
     .browse({
       limit: 'all',
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
-  const posts = postsData.filter((item: any) => !item.pagination)
+  const posts = postsData.filter((item: PostItem) => !item.pagination)
 
   const paths = posts.map((item: IPostItem) => `/posts/${item.slug}`)
 
@@ -102,13 +112,12 @@ export async function getStaticPaths() {
   }
 }
 
-/* TODO: fix this any! */
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: GetStaticPropsParams) {
   const post = await api.posts
     .read({
       slug: params.slug,
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
   const settings = await api.settings.browse()
 

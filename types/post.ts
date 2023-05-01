@@ -9,4 +9,9 @@ export type Post = Pick<
   | 'feature_image_caption'
   | 'reading_time'
   | 'published_at'
+  | 'og_image'
+  | 'twitter_image'
+  | 'html'
+  | 'meta_description'
+  | 'meta_title'
 >

@@ -7,6 +7,16 @@ import { Header } from '../components/Header'
 import { NavItem } from '../components/Nav/Nav.types'
 import { BaseNode } from '../types/base'
 
+interface GetStaticPropsParams {
+  params: {
+    page: number
+  }
+}
+
+interface PagesDataItem {
+  pagination?: Record<string, number | null>
+}
+
 interface PageProps {
   story: BaseNode
   navigation: NavItem[]
@@ -52,9 +62,9 @@ export async function getStaticPaths() {
     .browse({
       limit: 'all',
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
-  const pages = pagesData.filter((item: any) => !item.pagination)
+  const pages = pagesData.filter((item: PagesDataItem) => !item.pagination)
 
   const paths = pages.map((item: IPostItem) => `/${item.slug}`)
 
@@ -64,13 +74,12 @@ export async function getStaticPaths() {
   }
 }
 
-/* TODO: fix this any! */
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({ params }: GetStaticPropsParams) {
   const page = await api.pages
     .read({
       slug: params.page,
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
   const settings = await api.settings.browse()
 

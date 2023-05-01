@@ -3,8 +3,21 @@ import PostList from '../../components/PostList/PostList'
 import Head from 'next/dist/shared/lib/head'
 import { api } from '../../lib/ghost'
 import { Header } from '../../components/Header'
+import { Post } from '../../types/post'
+import { NavItem } from '../../components/Nav/Nav.types'
+import { IPostItem } from '../../components/PostList/PostList.types'
 
-const BlogIndex: React.FunctionComponent<any> = ({
+interface BlogIndexProps {
+  story: Post
+  posts: IPostItem[]
+  navigation: NavItem[]
+}
+
+interface BlogIndexItem {
+  pagination?: Record<string, number | null>
+}
+
+const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
   story,
   posts,
   navigation,
@@ -38,15 +51,15 @@ export async function getStaticProps() {
     .read({
       slug: 'blog',
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
   const postsData = await api.posts
     .browse({
       limit: 'all',
     })
-    .catch((err: any) => console.error(err))
+    .catch((err: Error) => console.error(err))
 
-  const posts = postsData.filter((item: any) => !item.pagination)
+  const posts = postsData.filter((item: BlogIndexItem) => !item.pagination)
 
   const settings = await api.settings.browse()
 
