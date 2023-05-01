@@ -13,7 +13,7 @@ const Nav: FunctionComponent<NavProps> = ({ opened, setOpen, items }) => {
   const onLinkClick = () => setTimeout(() => setOpen(false), 500)
 
   useEffect(() => {
-    let timer: number | null = null
+    let timer: null | ReturnType<typeof setTimeout> = null
 
     const nav = navRef.current
 
