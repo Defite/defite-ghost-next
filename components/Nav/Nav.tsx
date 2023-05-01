@@ -13,20 +13,20 @@ const Nav: FunctionComponent<NavProps> = ({ opened, setOpen, items }) => {
   const onLinkClick = () => setTimeout(() => setOpen(false), 500)
 
   useEffect(() => {
-    let timer: null | ReturnType<typeof setTimeout> = null
+    let timer: ReturnType<typeof setTimeout> | undefined = undefined
 
     const nav = navRef.current
 
     window.addEventListener('resize', function () {
       if (timer) {
         clearTimeout(timer)
-        timer = null
+        timer = undefined
       } else {
         nav?.classList.add('transition-none')
       }
       timer = setTimeout(() => {
         nav?.classList.remove('transition-none')
-        timer = null
+        timer = undefined
       }, 100)
     })
 
