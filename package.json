@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "prettier --write \"{components,layouts,lib,pages}/**/*.{js,tsx}\" && next lint"
+    "lint": "prettier --write \"{components,layouts,lib,pages}/**/*.{js,tsx}\" && next lint",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@svgr/webpack": "^7.0.0",
@@ -27,6 +28,7 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
     "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "typescript": "5.0.4"
