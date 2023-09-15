@@ -2133,7 +2133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@windicss/plugin-utils@npm:^1.8.10":
+"@windicss/plugin-utils@npm:^1.9.1":
   version: 1.9.1
   resolution: "@windicss/plugin-utils@npm:1.9.1"
   dependencies:
@@ -3014,7 +3014,7 @@ __metadata:
     react-dom: 18.2.0
     sharp: ^0.32.5
     typescript: 5.2.2
-    windicss-webpack-plugin: ^1.7.8
+    windicss-webpack-plugin: ^1.8.0
   languageName: unknown
   linkType: soft
 
@@ -6750,11 +6750,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"windicss-webpack-plugin@npm:^1.7.8":
-  version: 1.7.8
-  resolution: "windicss-webpack-plugin@npm:1.7.8"
+"windicss-webpack-plugin@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "windicss-webpack-plugin@npm:1.8.0"
   dependencies:
-    "@windicss/plugin-utils": ^1.8.10
+    "@windicss/plugin-utils": ^1.9.1
     debug: ^4.3.4
     get-port: ^6.1.2
     loader-utils: ^2.0.0
@@ -6762,7 +6762,7 @@ __metadata:
     pathe: ^1.1.0
     webpack-virtual-modules: ^0.5.0
     windicss: ^3.5.6
-  checksum: c7ad68938a8894812668d549c73b93b8121b5a9aa6f69cfd5e8b8d46840349ecef840046ecda4611b97a94656b7eefaf95ae8865081980ed7237721ba57b517c
+  checksum: d3ce3b23f8e7b96943f3d4e50f95f79683d3880dbfa61b2a23e4bb0a3b1b7e0d1fa082bf84109415dbeb0050b1f4b70b58e4f2f23242fc78c12e2b99c1ee25e8
   languageName: node
   linkType: hard
 
