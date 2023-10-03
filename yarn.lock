@@ -1902,10 +1902,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.5.7":
-  version: 20.5.7
-  resolution: "@types/node@npm:20.5.7"
-  checksum: fc284c8e16ddc04569730d58e87eae349eb1c3dd9020cb79a1862d9d9add6f04e7367a236f3252db8db2572f90278e250f4cd43d27d264972b54394eaba1ed76
+"@types/node@npm:^20.8.2":
+  version: 20.8.2
+  resolution: "@types/node@npm:20.8.2"
+  checksum: 3da73e25d821bfcdb7de98589027e08bb4848e55408671c4a83ec0341e124b5313a0b20e1e4b4eff1168ea17a86f622ad73fcb04b761abd77496b9a27cbd5de5
   languageName: node
   linkType: hard
 
@@ -2995,7 +2995,7 @@ __metadata:
   dependencies:
     "@svgr/webpack": ^8.0.1
     "@tryghost/content-api": ^1.11.16
-    "@types/node": ^20.5.7
+    "@types/node": ^20.8.2
     "@types/prismjs": ^1.26.0
     "@types/react": 18.2.21
     "@typescript-eslint/eslint-plugin": ^6.5.0
