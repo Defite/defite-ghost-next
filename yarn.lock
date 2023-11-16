@@ -1872,12 +1872,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tryghost/content-api@npm:^1.11.17":
-  version: 1.11.17
-  resolution: "@tryghost/content-api@npm:1.11.17"
+"@tryghost/content-api@npm:^1.11.20":
+  version: 1.11.20
+  resolution: "@tryghost/content-api@npm:1.11.20"
   dependencies:
     axios: ^1.0.0
-  checksum: 780740b9e330f1b56cf752c13e7baef8b2586c58a965b7b6565a214c6c688ccdae6bf416ae5c1c176f4dde117a9d79db5df8b842b6c2dc2ad62fb7fd87302c37
+  checksum: f44d1ee9b232943716511299f0fbb4ab760e0a43a761d02e9a982f41dbcf167470554189f70111a688d11c225f293ec8b71bc50ae16b70c3e274ea4d7444b2d1
   languageName: node
   linkType: hard
 
@@ -2979,7 +2979,7 @@ __metadata:
   resolution: "defite-next@workspace:."
   dependencies:
     "@svgr/webpack": ^8.1.0
-    "@tryghost/content-api": ^1.11.17
+    "@tryghost/content-api": ^1.11.20
     "@types/node": ^20.8.7
     "@types/prismjs": ^1.26.2
     "@types/react": 18.2.31
