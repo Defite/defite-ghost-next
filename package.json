@@ -22,7 +22,7 @@
     "windicss-webpack-plugin": "^1.8.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.16",
+    "@types/node": "^20.11.17",
     "@types/prismjs": "^1.26.3",
     "@types/react": "18.2.52",
     "@typescript-eslint/eslint-plugin": "^6.20.0",
