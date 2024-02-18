@@ -2105,14 +2105,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.2.52":
-  version: 18.2.52
-  resolution: "@types/react@npm:18.2.52"
+"@types/react@npm:18.2.56":
+  version: 18.2.56
+  resolution: "@types/react@npm:18.2.56"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: 4abc9bd63879e57c3df43a9cacff54c079e21b61ef934d33801e0177c26f582aa7d1d88a0769a740a4fd273168e3b150ff61de23e0fa85d1070e82ddce2b7fd2
+  checksum: 8f6d754e4add007667002bd3f4c3a3a577c4a75afcd5cdc93bd3c584750f25c41a024a9f7de802204156483bc2fcce417ff9d7063ac1713e2b8ccb7c8a08c0ff
   languageName: node
   linkType: hard
 
@@ -3003,7 +3003,7 @@ __metadata:
     "@tryghost/content-api": ^1.11.20
     "@types/node": ^20.11.19
     "@types/prismjs": ^1.26.3
-    "@types/react": 18.2.52
+    "@types/react": 18.2.56
     "@typescript-eslint/eslint-plugin": ^6.20.0
     "@typescript-eslint/parser": ^6.20.0
     "@vercel/analytics": ^1.1.4
