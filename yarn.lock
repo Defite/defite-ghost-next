@@ -2155,7 +2155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.4.2 || ^6.0.0, @typescript-eslint/parser@npm:^6.20.0":
+"@typescript-eslint/parser@npm:^5.4.2 || ^6.0.0":
   version: 6.20.0
   resolution: "@typescript-eslint/parser@npm:6.20.0"
   dependencies:
@@ -2170,6 +2170,24 @@ __metadata:
     typescript:
       optional: true
   checksum: 91c0a715e7a37a0386770b0c4c208d0732736828294a3f58901655f0edf9230d1211dbfb8ac0ea562993506130773131fc1ee241311f43d78007af959bd46b9a
+  languageName: node
+  linkType: hard
+
+"@typescript-eslint/parser@npm:^7.0.1":
+  version: 7.0.1
+  resolution: "@typescript-eslint/parser@npm:7.0.1"
+  dependencies:
+    "@typescript-eslint/scope-manager": 7.0.1
+    "@typescript-eslint/types": 7.0.1
+    "@typescript-eslint/typescript-estree": 7.0.1
+    "@typescript-eslint/visitor-keys": 7.0.1
+    debug: ^4.3.4
+  peerDependencies:
+    eslint: ^8.56.0
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: de86c90e3697c949a1572d3f258eedf1cb2358adde9b0069138082d06ffade463605bec8b516df656b8a7250e34579afbecfe7cebc9a991ab79a60528b62358f
   languageName: node
   linkType: hard
 
@@ -3051,7 +3069,7 @@ __metadata:
     "@types/prismjs": ^1.26.3
     "@types/react": 18.2.52
     "@typescript-eslint/eslint-plugin": ^7.0.1
-    "@typescript-eslint/parser": ^6.20.0
+    "@typescript-eslint/parser": ^7.0.1
     "@vercel/analytics": ^1.1.4
     classnames: ^2.5.1
     eslint: 8.56.0
