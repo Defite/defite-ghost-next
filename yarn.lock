@@ -2306,12 +2306,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "@vercel/analytics@npm:1.1.4"
+"@vercel/analytics@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@vercel/analytics@npm:1.2.2"
   dependencies:
     server-only: ^0.0.1
-  checksum: 6aa9da0b7eaf63e6c14d95d725f088df41558a927d50d5a3de34a7326171d9195ec67a52481a1490cf64083741a503d6fd18e58164bc2a4068b8e3a9ef50e6bc
+  peerDependencies:
+    next: ">= 13"
+    react: ^18 || ^19
+  peerDependenciesMeta:
+    next:
+      optional: true
+    react:
+      optional: true
+  checksum: 5913caeb2077d3d9c2eddabed90e40e29762e9e53941d3e1337daa0a60423ffef2a2c0b5a743ff37ea1aa9cfe7eb3159e4dff91cd4843a8503be5680c2faa98d
   languageName: node
   linkType: hard
 
@@ -3052,7 +3060,7 @@ __metadata:
     "@types/react": 18.2.52
     "@typescript-eslint/eslint-plugin": ^7.0.1
     "@typescript-eslint/parser": ^6.20.0
-    "@vercel/analytics": ^1.1.4
+    "@vercel/analytics": ^1.2.2
     classnames: ^2.5.1
     eslint: 8.56.0
     eslint-config-next: 14.1.0
