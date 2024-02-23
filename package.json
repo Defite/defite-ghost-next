@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "prettier --write \"{components,layouts,lib,pages}/**/*.{js,tsx}\" && next lint",
-    "postinstall": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
     "@tryghost/content-api": "^1.11.20",
-    "@vercel/analytics": "^1.1.4",
+    "@vercel/analytics": "^1.2.2",
     "classnames": "^2.5.1",
     "next": "14.1.0",
     "prismjs": "^1.29.0",
@@ -22,16 +22,16 @@
     "windicss-webpack-plugin": "^1.8.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.19",
+    "@types/node": "^20.11.20",
     "@types/prismjs": "^1.26.3",
-    "@types/react": "18.2.52",
-    "@typescript-eslint/eslint-plugin": "^7.0.1",
-    "@typescript-eslint/parser": "^6.20.0",
+    "@types/react": "18.2.58",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
     "eslint": "8.56.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.1",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "typescript": "5.3.3"
   },

@@ -5,4 +5,10 @@
   grid-template-columns: repeat(auto-fill, 245px);
   grid-gap: 3rem;
   margin: 2rem 0;
+
+  @media (max-width: 588px) {
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  }
 }
+
+
