@@ -3,10 +3,10 @@ import './cards.min.css'
 import 'windi.css'
 import 'prismjs/themes/prism-okaidia.css'
 import type { AppProps } from 'next/app'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import Layout from '../layouts/layout'
 import React from 'react'
 import { useRouter } from 'next/router'
-import { Analytics } from '@vercel/analytics/react'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Analytics />
+      <SpeedInsights />
     </>
   )
 }
