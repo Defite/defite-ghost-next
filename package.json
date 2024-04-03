@@ -15,26 +15,26 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "classnames": "^2.5.1",
-    "next": "14.1.2",
+    "next": "14.1.4",
     "prismjs": "^1.29.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "^0.33.2",
+    "sharp": "^0.33.3",
     "windicss-webpack-plugin": "^1.8.0"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.12.4",
     "@types/prismjs": "^1.26.3",
-    "@types/react": "18.2.63",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@types/react": "18.2.74",
+    "@typescript-eslint/eslint-plugin": "^7.5.0",
+    "@typescript-eslint/parser": "^7.5.0",
     "eslint": "8.57.0",
-    "eslint-config-next": "14.1.2",
+    "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "typescript": "5.3.3"
+    "typescript": "5.4.3"
   },
   "packageManager": "yarn@3.5.0"
 }
