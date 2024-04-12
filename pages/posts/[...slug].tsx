@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { IPostItem } from '../../components/PostList/PostList.types'
 import { Header } from '../../components/Header'
 import { useEffect } from 'react'
-import { Post } from '../../types/post'
+import type { Post } from '../../types/post'
 import { NavItem } from '../../components/Nav/Nav.types'
 
 interface PostProps {
