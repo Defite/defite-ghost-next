@@ -2118,13 +2118,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.2.74":
-  version: 18.2.74
-  resolution: "@types/react@npm:18.2.74"
+"@types/react@npm:18.2.77":
+  version: 18.2.77
+  resolution: "@types/react@npm:18.2.77"
   dependencies:
     "@types/prop-types": "*"
     csstype: ^3.0.2
-  checksum: 093c0e350552e61393e2ba30169aa620e2e64c1e2d0ff38efd2a7549ded689b6ab6bffb65fe0f7ef9e143174de54442d942bd70c014649f464c52465701208d8
+  checksum: 7014b06565228ffb24740e3b2cad168a52c1befa78f52f421c7eb61f86dcf599b494b8220c7bfc77882e19cb52440a1ed713d4a483dc8941c4ce824bd9729755
   languageName: node
   linkType: hard
 
@@ -3162,7 +3162,7 @@ __metadata:
     "@tryghost/content-api": ^1.11.20
     "@types/node": ^20.12.4
     "@types/prismjs": ^1.26.3
-    "@types/react": 18.2.74
+    "@types/react": 18.2.77
     "@typescript-eslint/eslint-plugin": ^7.5.0
     "@typescript-eslint/parser": ^7.5.0
     "@vercel/analytics": ^1.2.2
