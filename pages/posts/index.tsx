@@ -3,7 +3,7 @@ import PostList from '../../components/PostList/PostList'
 import Head from 'next/dist/shared/lib/head'
 import { api } from '../../lib/ghost'
 import { Header } from '../../components/Header'
-import { Post } from '../../types/post'
+import type { Post } from '../../types/post'
 import { NavItem } from '../../components/Nav/Nav.types'
 import { IPostItem } from '../../components/PostList/PostList.types'
 

@@ -1,3 +1,3 @@
-import { Post } from '../../types/post'
+import type { Post } from '../../types/post'
 
 export type IntroProps = Pick<Post, 'html'>

@@ -1,4 +1,4 @@
-import { Post } from '../../types/post'
+import type { Post } from '../../types/post'
 
 const formatReadingDate = (date: Post['published_at']) => {
   const dateString = new Date(date)
