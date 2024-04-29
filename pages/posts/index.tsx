@@ -1,4 +1,3 @@
-import PostHeader from '../../components/PostHeader /PostHeader'
 import PostList from '../../components/PostList/PostList'
 import Head from 'next/dist/shared/lib/head'
 import { api } from '../../lib/ghost'

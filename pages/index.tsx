@@ -6,7 +6,6 @@ import { Header } from '../components/Header'
 import { IPostItem } from '../components/PostList/PostList.types'
 import { NavItem } from '../components/Nav/Nav.types'
 import { PageTitle } from '../components/PageTitle'
-import Link from 'next/link'
 // import Projects from '../components/Projects/Projects'
 
 interface PostsDataItem {
