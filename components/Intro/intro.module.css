@@ -6,6 +6,10 @@
     @apply pt-6rem;
     height: calc(100vh - 88px)
   }
+
+  @media (min-width: 1024px) and (min-height: 790px) {
+    @apply py-8rem;
+  }
 }
 
 .text {
@@ -94,7 +98,7 @@ a.introButton {
   cursor: pointer;
   display: none;
 
-  @screen lg {
+  @media (min-width: 1024px) and (max-height: 790px) {
     display: inline-block;
   }
 }
