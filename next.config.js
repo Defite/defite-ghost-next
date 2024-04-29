@@ -17,12 +17,12 @@ module.exports = {
     return config
   },
   images: {
-    domains: [
-      'a.storyblok.com',
-      'images.unsplash.com',
-      'localhost',
-      'static.ghost.org',
-      '933413-defite.tmweb.ru',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+      },
     ],
   },
 }

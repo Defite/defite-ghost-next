@@ -1,8 +1,4 @@
 .logo {
-  @apply font-serif;
-  @apply text-xl;
-  @apply z-20;
-
   display: flex;
   align-items: center;
 }
@@ -19,8 +15,4 @@
 
 .avatar:hover {
   @apply ring-blue-400;
-}
-
-.logoText {
-  margin-left: 1rem;
 }

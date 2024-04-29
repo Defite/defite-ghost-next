@@ -6,6 +6,7 @@ import { Header } from '../../components/Header'
 import type { Post } from '../../types/post'
 import { NavItem } from '../../components/Nav/Nav.types'
 import { IPostItem } from '../../components/PostList/PostList.types'
+import { PageTitle } from '../../components/PageTitle'
 
 interface BlogIndexProps {
   story: Post
@@ -37,8 +38,8 @@ const BlogIndex: React.FunctionComponent<BlogIndexProps> = ({
             content="https://nikita.codes/share.png"
           />
         </Head>
-        <PostHeader data={story} alignCenter isPage />
-        <div className="container mx-auto px-4 sm:px-16">
+        <PageTitle {...story} className="mt-10" />
+        <div className="container mx-auto">
           <PostList items={posts} />
         </div>
       </main>

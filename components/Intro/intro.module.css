@@ -1,9 +1,11 @@
 .intro {
-  @apply px-1.5rem;
   @apply py-2rem;
+  @apply px-1.5rem;
 
-  display: flex;
-  flex-flow: row wrap;
+  @media (min-width: 1024px) and (max-height: 790px) {
+    @apply pt-6rem;
+    height: calc(100vh - 88px)
+  }
 }
 
 .text {
@@ -16,7 +18,27 @@
   @apply font-bold;
   @apply leading-snug;
 
-  margin-bottom: 2.75rem;
+  margin-bottom: 1rem;
+
+  @screen xsm {
+    @apply text-2.5rem;
+    @apply leading-tight;
+  }
+
+  @screen sm {
+    @apply text-3.5rem;
+    @apply leading-tight;
+    margin-bottom: 2.75rem;
+  }
+
+  @screen md {
+    @apply text-4rem;
+    line-height: 1.1;
+  }
+
+  @screen lg {
+    @apply text-5.5rem;
+  }
 }
 
 .intro :global(a) {
@@ -42,15 +64,22 @@
 }
 
 .text > h2 {
-  @apply text-2xl;
+  @apply text-xl;
   @apply tracking-wider;
   @apply leading-relaxed;
-  @apply mb-15;
 
   font-weight: 300;
+
+  @screen sm {
+    @apply text-2xl;
+  }
+
+  @screen lg {
+    @apply mb-8;
+  }
 }
 
-.introButton {
+a.introButton {
   @apply rounded-full;
   @apply border-2;
   @apply border-blue-400;
@@ -64,6 +93,10 @@
 
   cursor: pointer;
   display: none;
+
+  @screen lg {
+    display: inline-block;
+  }
 }
 
 a.introButton::after {
@@ -78,56 +111,4 @@ a.introButton::after {
 .introButtonIcon {
   display: inline-block;
   vertical-align: sub;
-}
-
-@screen xsm {
-  .text > h1 {
-    @apply text-2.5rem;
-    @apply leading-tight;
-  }
-}
-
-@screen sm {
-  .text > h1 {
-    @apply text-3.5rem;
-    @apply leading-tight;
-  }
-}
-
-@screen md {
-  .text > h1 {
-    @apply text-4rem;
-
-    line-height: 1.1;
-
-    animation: reveal .8s cubic-bezier(.215,.61,.355,1) .25s backwards;
-  }
-
-  .text > h2 {
-    animation: reveal .8s cubic-bezier(.215,.61,.355,1) .75s backwards;
-  }
-
-  .introButton {
-    display: block;
-
-    animation: reveal .8s cubic-bezier(.215,.61,.355,1) 1.25s backwards;
-  }
-}
-
-@screen lg {
-  .text > h1 {
-    @apply text-5.5rem;
-  }
-
-  .intro {
-    @apply px-3rem;
-    @apply py-8rem;
-  }
-}
-
-@keyframes reveal {
-  0% {
-      opacity: 0;
-      transform: translateY(8px)
-  }
 }

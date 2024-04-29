@@ -1,5 +1,4 @@
 .nav {
-  @apply bg-white;
   @apply origin-center;
 
   position: absolute;
@@ -10,6 +9,7 @@
 }
 
 .navList {
+  @apply bg-white
   @apply space-y-10;
 
   list-style: none;
@@ -35,9 +35,11 @@
   }
 
   .navList {
+    @apply bg-transparent
     @apply space-y-0;
 
     flex-direction: row;
+    
   }
 
   .navItem {

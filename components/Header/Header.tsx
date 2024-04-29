@@ -11,11 +11,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ items }) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerInner}>
-        <Logo
-          name="Defite"
-          avatar="/avatar.jpg"
-          onClick={() => setOpen(false)}
-        />
+        <Logo avatar="/avatar.jpg" onClick={() => setOpen(false)} />
         <Nav opened={opened} setOpen={setOpen} items={items} />
         <Burger opened={opened} setOpen={setOpen} />
       </div>
