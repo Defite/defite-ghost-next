@@ -40,7 +40,7 @@ export default function Home({
 
         <Intro {...page} />
 
-        <section id="posts" className="-mt-5 mb-5 h-5 w-5"></section>
+        <section id="posts" className="-mt-5 mb-5 w-5"></section>
         <section className="posts px-1.5rem">
           <PageTitle title="Latest posts" type="secondary" />
 
