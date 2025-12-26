@@ -2112,10 +2112,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prismjs@npm:^1.26.3":
-  version: 1.26.3
-  resolution: "@types/prismjs@npm:1.26.3"
-  checksum: c627fa9d9f4277ce413bb8347944152cddfc892702e34ff4b099dc1cf3f00c09514d36349c23529b903b0e57f3b2e0dc91ee66e98af07fbbe1e3fe8346b23370
+"@types/prismjs@npm:^1.26.5":
+  version: 1.26.5
+  resolution: "@types/prismjs@npm:1.26.5"
+  checksum: d208b04ee9b6de6b2dc916439a81baa47e64ab3659a66d3d34bc3e42faccba9d4b26f590d76f97f7978d1dfaafa0861f81172b1e3c68696dd7a42d73aaaf5b7b
   languageName: node
   linkType: hard
 
@@ -3215,7 +3215,7 @@ __metadata:
     "@svgr/webpack": ^8.1.0
     "@tryghost/content-api": ^1.11.21
     "@types/node": ^20.14.1
-    "@types/prismjs": ^1.26.3
+    "@types/prismjs": ^1.26.5
     "@types/react": 18.3.1
     "@typescript-eslint/eslint-plugin": ^7.7.1
     "@typescript-eslint/parser": ^7.12.0
@@ -3229,7 +3229,7 @@ __metadata:
     lint-staged: ^15.2.2
     next: 14.2.3
     prettier: ^3.3.0
-    prismjs: ^1.29.0
+    prismjs: ^1.30.0
     react: 18.3.1
     react-dom: 18.3.1
     sharp: ^0.33.3
@@ -5433,10 +5433,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.29.0":
-  version: 1.29.0
-  resolution: "prismjs@npm:1.29.0"
-  checksum: 007a8869d4456ff8049dc59404e32d5666a07d99c3b0e30a18bd3b7676dfa07d1daae9d0f407f20983865fd8da56de91d09cb08e6aa61f5bc420a27c0beeaf93
+"prismjs@npm:^1.30.0":
+  version: 1.30.0
+  resolution: "prismjs@npm:1.30.0"
+  checksum: a68eddd4c5f1c506badb5434b0b28a7cc2479ed1df91bc4218e6833c7971ef40c50ec481ea49749ac964256acb78d8b66a6bd11554938e8998e46c18b5f9a580
   languageName: node
   linkType: hard
 
